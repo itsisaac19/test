@@ -32,6 +32,16 @@
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
 	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
 	@keyframes  {
 	
 	
@@ -62,6 +72,10 @@
 		left: 107px;
 		top: 75px;
 		overflow: visible;
+		cursor: pointer;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Icon_Menus___1.html;
 	}
 	.Ellipse_1 {
 		position: absolute;
@@ -193,7 +207,7 @@
 		top: 703px;
 		--web-animation: fadein 0.2s wind-up;
 		--web-action-type: page;
-		--web-action-target: FYC2.html;
+		--web-action-target: Home_Today_Weather.html;
 		cursor: pointer;
 	}
 	#Let_s_go_ {
@@ -205,7 +219,7 @@
 		height: 47px;
 		--web-animation: fadein 0.2s wind-up;
 		--web-action-type: page;
-		--web-action-target: FYC2.html;
+		--web-action-target: Home_Today_Weather.html;
 		cursor: pointer;
 		text-align: center;
 		font-family: Continuo;
@@ -2353,7 +2367,7 @@ var Application = function() {
 			}
 			// if target view is on bottom
 			// then show target view instantly 
-			// and fade out current view
+			// and fade out current view
 			else if (fromIndex>toIndex) {
 				self.setElementAnimation(to, null);
 				self.setElementAnimation(from, null);
@@ -2656,7 +2670,7 @@ window.application = new Application();
 <div id="Find_your_city">
 	<img id="Image_1" src="Image_1.png" srcset="Image_1.png 1x, Image_1@2x.png 2x">
 	<img id="Weather_Clear" src="Weather_Clear.png" srcset="Weather_Clear.png 1x, Weather_Clear@2x.png 2x">
-	<div id="Group_1">
+	<div onclick="application.showOverlay('Icon_Menus___1',0,0, event)" id="Group_1">
 		<svg class="Ellipse_1">
 			<ellipse fill="rgba(207,144,20,1)" id="Ellipse_1" rx="47.5" ry="47.5" cx="47.5" cy="47.5">
 			</ellipse>
