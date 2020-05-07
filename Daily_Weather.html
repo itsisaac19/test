@@ -58,16 +58,15 @@
 	
 	}
 	#Rectangle_38 {
-		opacity: 0.25;
-		filter: blur(10px);
+		opacity: 0.21;
 	}
 	.Rectangle_38 {
 		position: absolute;
 		overflow: visible;
 		width: 1037px;
 		height: 203px;
-		left: 788px;
-		top: 314px;
+		left: 780px;
+		top: 410px;
 	}
 	.Rectangle_15 {
 		position: absolute;
@@ -3670,10 +3669,16 @@ window.application = new Application();
 </head>
 <body>
 <div id="Daily_Weather">
-	<svg class="Rectangle_38">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_38" rx="8" ry="8" x="0" y="0" width="977" height="143">
-		</rect>
-	</svg>
+	<svg class="Rectangle_38" style="opacity: 0.21;">
+ 	  <svg height="230" width="1000">
+            <defs>
+             <filter id="f1" x="0" y="0">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="6"></feGaussianBlur>
+             </filter>
+            </defs>
+            <rect rx="40" ry="40" width="990" height="50" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+  
+</svg></svg>
 	<svg class="Rectangle_15">
 		<rect fill="rgba(148,194,198,1)" onclick="application.goToTargetView(event)" id="Rectangle_15" rx="10" ry="10" x="0" y="0" width="995" height="168">
 		</rect>
