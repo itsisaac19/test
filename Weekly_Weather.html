@@ -79,15 +79,14 @@
 	}
 	#Rectangle_49 {
 		opacity: 0.21;
-		filter: blur(10px);
 	}
 	.Rectangle_49 {
 		position: absolute;
 		overflow: visible;
 		width: 236px;
 		height: 236px;
-		left: 36px;
-		top: 965px;
+		left: 25px;
+		top: 935px;
 	}
 	.Rectangle_48 {
 		position: absolute;
@@ -4705,10 +4704,6 @@ window.application = new Application();
 </head>
 <body>
 <div id="Weekly_Weather">
-	<svg class="Rectangle_63">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_63" rx="7" ry="7" x="0" y="0" width="448" height="69">
-		</rect>
-	</svg>
 	<svg class="Rectangle_62_ha">
 		<linearGradient id="Rectangle_62_ha" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
 			<stop offset="0" stop-color="#a0c7c9" stop-opacity="1"></stop>
@@ -4717,10 +4712,16 @@ window.application = new Application();
 		<rect fill="url(#Rectangle_62_ha)" id="Rectangle_62_ha" rx="7" ry="7" x="0" y="0" width="466" height="93">
 		</rect>
 	</svg>
-	<svg class="Rectangle_49">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_49" rx="10" ry="10" x="0" y="0" width="176" height="176">
-		</rect>
-	</svg>
+	<svg class="Rectangle_49" style="opacity: 0.21;">
+		<svg height="230" width="230">
+		 <defs>
+		   <filter id="f1" x="0" y="0">
+			 <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+		   </filter>
+		 </defs>
+		 <rect rx="24" ry="24" width="190" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+		 
+	   </svg></svg>
 	<svg class="Rectangle_48">
 		<rect fill="rgba(160,199,201,1)" id="Rectangle_48" rx="10" ry="10" x="0" y="0" width="196" height="211">
 		</rect>
