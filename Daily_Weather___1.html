@@ -847,15 +847,14 @@
 	}
 	#Rectangle_45 {
 		opacity: 0.22;
-		filter: blur(10px);
 	}
 	.Rectangle_45 {
 		position: absolute;
 		overflow: visible;
 		width: 1036px;
 		height: 320px;
-		left: 792px;
-		top: 572px;
+		left: 782px;
+		top: 622px;
 	}
 	.Rectangle_46_ec {
 		position: absolute;
@@ -3763,7 +3762,7 @@ window.application = new Application();
 <body>
 <div id="Daily_Weather___1">
 	<svg class="Rectangle_15">
-		<rect fill="rgba(148,194,198,1)" onclick="application.goToTargetView(event)" id="Rectangle_15" rx="10" ry="10" x="0" y="0" width="995" height="168">
+		<rect fill="rgba(148,194,198,1)" onclick="application.goToTargetView(event)" id="Rectangle_15" rx="10" ry="10" x="0" y="0" width="995" height="185">
 		</rect>
 	</svg>
 	<img id="Image_1" src="Image_1.png" srcset="Image_1.png 1x, Image_1@2x.png 2x">
@@ -3950,16 +3949,22 @@ window.application = new Application();
 		<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" shape-rendering="auto" id="Line_8" d="M 0 38 L 15 0">
 		</path>
 	</svg>
-	<svg class="Rectangle_45">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_45" rx="0" ry="0" x="0" y="0" width="976" height="260">
-		</rect>
-	</svg>
-	<svg class="Rectangle_46_ec">
+	<svg class="Rectangle_45" style="opacity: 0.21;">
+		<svg height="230" width="990">
+		 <defs>
+		   <filter id="f1" x="0" y="0">
+			 <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+		   </filter>
+		 </defs>
+		 <rect rx="24" ry="24" width="990" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+		 
+	   </svg></svg>
+	   <svg class="Rectangle_46_ec">
 		<linearGradient id="Rectangle_46_ec" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
 			<stop offset="0" stop-color="#94c2c6" stop-opacity="1"></stop>
 			<stop offset="1" stop-color="#a1c6c5" stop-opacity="1"></stop>
 		</linearGradient>
-		<rect fill="url(#Rectangle_46_ec)" id="Rectangle_46_ec" rx="0" ry="0" x="0" y="0" width="995" height="377">
+		<rect fill="url(#Rectangle_46_ec)" id="Rectangle_46_ec" rx="10" ry="10" x="0" y="0" width="995" height="377">
 		</rect>
 	</svg>
 	<div id="TODAY_ed">
