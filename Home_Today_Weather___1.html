@@ -59,7 +59,6 @@
 	}
 	#Rectangle_12 {
 		opacity: 0.22;
-		filter: blur(10px);
 	}
 	.Rectangle_12 {
 		position: absolute;
@@ -67,7 +66,7 @@
 		width: 878px;
 		height: 659px;
 		left: 1029px;
-		top: 441px;
+		top: 830px;
 	}
 	#Rectangle_10 {
 		opacity: 0.21;
@@ -3048,10 +3047,16 @@ window.application = new Application();
 </head>
 <body>
 <div id="Home_Today_Weather___1">
-	<svg class="Rectangle_12">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_12" rx="0" ry="0" x="0" y="0" width="818" height="599">
-		</rect>
-	</svg>
+	<svg class="Rectangle_12" style="opacity: 0.21;">
+		<svg height="230" width="830">
+			 <defs>
+			  <filter id="f1" x="0" y="0">
+			   <feGaussianBlur in="SourceGraphic" stdDeviation="6"></feGaussianBlur>
+			  </filter>
+			 </defs>
+			 <rect rx="40" ry="40" width="830" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+   
+ </svg></svg>
 	<svg class="Rectangle_10" style="opacity: 0.21;">
 		<svg height="230" width="890">
 		 <defs>
