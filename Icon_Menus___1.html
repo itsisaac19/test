@@ -206,14 +206,13 @@
 	}
 	#Rectangle_87 {
 		opacity: 0.21;
-		filter: blur(10px);
 	}
 	.Rectangle_87 {
 		position: absolute;
 		overflow: visible;
 		width: 229px;
 		height: 111px;
-		left: 420px;
+		left: 415px;
 		top: 453px;
 	}
 	.Rectangle_85 {
@@ -2782,10 +2781,16 @@ window.application = new Application();
 		<rect fill="rgba(206,224,219,1)" onclick="application.goToTargetView(event)" id="Rectangle_76" rx="10" ry="10" x="0" y="0" width="181" height="76">
 		</rect>
 	</svg>
-	<svg class="Rectangle_87">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_87" rx="10" ry="10" x="0" y="0" width="169" height="51">
-		</rect>
-	</svg>
+	<svg class="Rectangle_87" style="opacity: 0.21;">
+		<svg height="230" width="230">
+		 <defs>
+		   <filter id="f1" x="0" y="0">
+			 <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+		   </filter>
+		 </defs>
+		 <rect rx="24" ry="24" width="176" height="50" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+		 
+	   </svg></svg>
 	<svg class="Rectangle_85">
 		<rect fill="rgba(206,224,219,1)" onclick="application.goToTargetView(event)" id="Rectangle_85" rx="10" ry="10" x="0" y="0" width="181" height="76">
 		</rect>
