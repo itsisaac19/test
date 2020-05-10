@@ -561,7 +561,6 @@
 	}
 	#Rectangle_94 {
 		opacity: 0.21;
-		filter: blur(10px);
 	}
 	.Rectangle_94 {
 		position: absolute;
@@ -3227,10 +3226,16 @@ window.application = new Application();
 		<rect fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_92" rx="3" ry="3" x="0" y="0" width="32" height="32">
 		</rect>
 	</svg>
-	<svg class="Rectangle_94">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_94" rx="10" ry="10" x="0" y="0" width="169" height="51">
-		</rect>
-	</svg>
+	<svg class="Rectangle_94" style="opacity: 0.21;">
+		<svg height="230" width="230">
+		 <defs>
+		   <filter id="f1" x="0" y="0">
+			 <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+		   </filter>
+		 </defs>
+		 <rect rx="24" ry="24" width="170" height="50" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+		 
+	   </svg></svg>
 	<svg class="Rectangle_93">
 		<rect fill="rgba(206,224,219,1)" id="Rectangle_93" rx="10" ry="10" x="0" y="0" width="181" height="76">
 		</rect>
