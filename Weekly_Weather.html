@@ -1179,15 +1179,14 @@
 	}
 	#Rectangle_50 {
 		opacity: 0.21;
-		filter: blur(10px);
 	}
 	.Rectangle_50 {
 		position: absolute;
 		overflow: visible;
 		width: 236px;
 		height: 236px;
-		left: 301px;
-		top: 965px;
+		left: 291px;
+		top: 935px;
 	}
 	.Rectangle_51 {
 		position: absolute;
@@ -5060,10 +5059,16 @@ window.application = new Application();
 			</path>
 		</svg>
 	</div>
-	<svg class="Rectangle_50">
-		<rect fill="rgba(0,0,0,1)" id="Rectangle_50" rx="10" ry="10" x="0" y="0" width="176" height="176">
-		</rect>
-	</svg>
+	<svg class="Rectangle_50" style="opacity: 0.21;">
+		<svg height="230" width="230">
+		 <defs>
+		   <filter id="f1" x="0" y="0">
+			 <feGaussianBlur in="SourceGraphic" stdDeviation="4"></feGaussianBlur>
+		   </filter>
+		 </defs>
+		 <rect rx="24" ry="24" width="190" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+		 
+	   </svg></svg>
 	<svg class="Rectangle_51">
 		<rect fill="rgba(160,199,201,1)" id="Rectangle_51" rx="10" ry="10" x="0" y="0" width="196" height="211">
 		</rect>
