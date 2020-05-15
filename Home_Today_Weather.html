@@ -23,6 +23,84 @@
 		box-sizing: border-box;
 		border: none;
 	}
+  
+  .input{
+    left:50px
+	
+  }
+  
+  input[type="submit"]{
+	left: 91px;
+	top: 831px;
+    padding: 15px 30px;
+    background: #e7e7e7;
+    border: none;
+    border-radius: 1px;
+    font-family: "Nunito",sans-serif;
+    font-weight:bold;
+    font-size: 20px;
+  }
+  
+  .input input[type="text"]{
+    width: 600px;
+    height: 55px;
+    padding: 5px 10px;
+    background: #e7e7e7;
+    border: none;
+    border-radius: 1px;
+    font-family: "Nunito",sans-serif;
+    font-weight:bold;
+    font-size: 20px;
+  }
+  
+  .card{
+    background: #e7e7e7;
+  }
+  
+  .convert h1{
+    text-align: center;
+    top: 100px
+  }
+
+  .close{
+    float: right;
+    margin-top: -2px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .card h1{
+    padding: 5px 0;
+    text-align: center;
+  }
+   
+  .final{
+	  font-family: Continuo;
+  }
+  
+  .final p{
+	position: absolute;
+		left: 91px;
+		top: 831px;
+		overflow: visible;
+		width: 225px;
+		white-space: nowrap;
+		--web-animation: fadein 1s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_Today_Weather___1.html;
+		cursor: pointer;
+		text-align: center;
+		font-family: Continuo;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 136px;
+		color: rgba(122,136,135,1);
+  }
+  .card p{
+    text-align: center;
+    margin:40px 0;
+    font-size:20px;
+  }
 	#Home_Today_Weather {
 		position: absolute;
 		width: 1920px;
@@ -488,6 +566,34 @@
  **/
 
 if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
+
+function myfunction(){
+	alert("JS test");
+	var main = document.querySelector('#name');
+	var temp = document.querySelector('.what');
+	var desc = document.querySelector('.desc');
+	var clouds = document.querySelector('.clouds');
+	var button= document.querySelector('.submit');
+
+	const KELVIN = 273;
+	const local = "Shoreview"
+	button.addEventListener('click', function(name){
+	fetch('https://api.openweathermap.org/data/2.5/weather?q='+local+'&appid=226665da3951803c74770f482ea4c65b')
+	.then(response => response.json())
+	.then(data => {
+  	var tempValue = Math.floor((data['main']['temp'] - KELVIN)*9/5+32);
+  	var nameValue = data['name'];
+  	var descValue = data['weather'][0]['description'];
+
+  	main.innerHTML = nameValue;
+  	desc.innerHTML = "Desc - "+descValue;
+  	temp.innerHTML = tempValue + "°"
+
+	})
+
+	.catch(err => alert("Wrong city name!"));
+	})
+	}
 
 var Application = function() {
 	// event constants
@@ -2900,7 +3006,7 @@ var Application = function() {
 window.application = new Application();
 </script>
 </head>
-<body>
+<body onload="myfunction()">
 <div id="Home_Today_Weather">
 	<svg class="Rectangle_12" style="opacity: 0.21;">
  	  <svg height="230" width="830">
@@ -2980,8 +3086,30 @@ window.application = new Application();
 			</path>
 		</svg>
 	</div>
+	<!-- <div class="main">
+		<div class="header">
+		  <h1>OpenWeatherMap API</h1>
+		  <p>Enter any city name in the input box below to get the data</p>
+		</div> -->
+	  
+		<div class="input">
+			<input type="submit" value="Submit" class="submit">
+		  </div>
+		</div>
+	  
+		<div class="container">
+		  <div class="card">
+			<h1 class="name" id="name"></h1>
+			<p class="temp"></p>
+			<p class="clouds"></p>
+			<p class="desc"></p>
+		  </div>
+		</div>
+	<div class="final">
+		<p class=what></p>
+	</div>
 	<div onclick="application.goToTargetView(event)" id="ID46_">
-		<span>46°</span>
+		<span></span>
 	</div>
 	<div id="TODAY">
 		<span>TODAY</span>
