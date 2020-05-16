@@ -23,37 +23,7 @@
 		box-sizing: border-box;
 		border: none;
 	}
-  
-  .input{
-    left:50px
-	
-  }
-  
-  input[type="submit"]{
-	left: 91px;
-	top: 831px;
-    padding: 15px 30px;
-    background: #e7e7e7;
-    border: none;
-    border-radius: 1px;
-    font-family: "Nunito",sans-serif;
-    font-weight:bold;
-    font-size: 20px;
-  }
-  
-  .input input[type="text"]{
-    width: 600px;
-    height: 55px;
-    padding: 5px 10px;
-    background: #e7e7e7;
-    border: none;
-    border-radius: 1px;
-    font-family: "Nunito",sans-serif;
-    font-weight:bold;
-    font-size: 20px;
-  }
-  
-  .card{
+   .card{
     background: #e7e7e7;
   }
   
@@ -555,7 +525,8 @@
 		top: 0px;
 	}
 </style>
-<script id="applicationScript">
+<script>
+	
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
@@ -567,21 +538,22 @@
 
 if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 
+
 function myfunction(){
-	alert("JS test");
+	
 	var main = document.querySelector('#name');
 	var temp = document.querySelector('.what');
 	var desc = document.querySelector('.desc');
 	var clouds = document.querySelector('.clouds');
 	var button= document.querySelector('.submit');
 
-	const KELVIN = 273;
-	const local = "Shoreview"
-	button.addEventListener('click', function(name){
-	fetch('https://api.openweathermap.org/data/2.5/weather?q='+local+'&appid=226665da3951803c74770f482ea4c65b')
+	const KELVIN = 273;  
+
+	fetch('https://api.openweathermap.org/data/2.5/weather?q=Shoreview&appid=226665da3951803c74770f482ea4c65b')
 	.then(response => response.json())
 	.then(data => {
-  	var tempValue = Math.floor((data['main']['temp'] - KELVIN)*9/5+32);
+
+	var tempValue = Math.floor((data['main']['temp'] - KELVIN)*9/5+32);
   	var nameValue = data['name'];
   	var descValue = data['weather'][0]['description'];
 
@@ -589,13 +561,24 @@ function myfunction(){
   	desc.innerHTML = "Desc - "+descValue;
   	temp.innerHTML = tempValue + "°"
 
-	})
+	 
+	
+	})	  
 
-	.catch(err => alert("Wrong city name!"));
-	})
-	}
+}
+
+function changetime() {
+	
+}
+
+
 
 var Application = function() {
+	// ISAAC LOOK HERE THIS IS WHERE THE JAVASCRIPT SHOULD GO YOU DIMWIT
+	
+	
+	
+	
 	// event constants
 	this.NAVIGATION_CHANGE = "viewChange";
 	this.VIEW_NOT_FOUND = "viewNotFound";
@@ -3093,7 +3076,7 @@ window.application = new Application();
 		</div> -->
 	  
 		<div class="input">
-			<input type="submit" value="Submit" class="submit">
+			<input type="submit" value="" class="submit">
 		  </div>
 		</div>
 	  
@@ -3108,6 +3091,7 @@ window.application = new Application();
 	<div class="final">
 		<p class=what></p>
 	</div>
+	<div id="txt"></div>
 	<div onclick="application.goToTargetView(event)" id="ID46_">
 		<span></span>
 	</div>
