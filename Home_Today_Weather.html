@@ -710,22 +710,20 @@
 	
 	if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 	
-	var shape = 1
 	
-	if (shape = 1) {
-		willthiswork();
-	}
 
 	function willthiswork() {
 		var today = new Date();
   		var h = today.getHours();
   		var m = today.getMinutes();
   		var s = today.getSeconds();
- 		 m = checkTime(m);
+		 m = checkTime(m);
  		 s = checkTime(s);
  		 document.getElementById('ID2_30_PM').innerHTML =
- 		 h + ":" + m + " AM"
+ 		 h + ":" + m + " PM"
   		var t = setTimeout(startTime, 500);
+
+		
 	}
 	
 	function checkTime(i) {
@@ -734,10 +732,28 @@
 }
 
 
-willthiswork();
 
 
-	
+
+
+function weekday() {
+  var d = new Date();
+  var weekday = new Array(7);
+  weekday[0] = "SUNDAY";
+  weekday[1] = "MONDAY";
+  weekday[2] = "TUESDAY";
+  weekday[3] = "WEDNESDAY";
+  weekday[4] = "THURSDAY";
+  weekday[5] = "FRIDAY";
+  weekday[6] = "SATURDAY";
+
+  var numberday = weekday[d.getDay()];
+  document.getElementById("SATURDAY").innerHTML = numberday;
+
+  willthiswork();
+}
+weekday();
+
 	function myfunction(){
 		
 		var main = document.querySelector('#name');
