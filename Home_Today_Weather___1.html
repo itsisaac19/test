@@ -43,7 +43,25 @@
     padding: 5px 0;
     text-align: center;
   }
-   
+  .humidover{
+	  font-family: Europa;
+  }
+  
+  .humidnow{
+	position: absolute;
+		left: 550px;
+		top: 923px;
+		overflow: visible;
+		width: 99px;
+		height: 62px;
+		text-align: left;
+		font-family: Europa;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 40px;
+		color: rgba(122,136,135,1);
+		letter-spacing: 2px;
+	}
   .final{
 	  font-family: Continuo;
   }
@@ -416,19 +434,7 @@
 		letter-spacing: 2px;
 	}
 	#ID35_ {
-		position: absolute;
-		left: 550px;
-		top: 923px;
-		overflow: visible;
-		width: 99px;
-		height: 62px;
-		text-align: left;
-		font-family: Europa;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 40px;
-		color: rgba(122,136,135,1);
-		letter-spacing: 2px;
+		
 	}
 	.Rectangle_11 {
 		position: absolute;
@@ -786,6 +792,9 @@
 	<div class="final" onclick="location.href='https://www.weather-clear.com/Home_Today_Weather.html';">
 		<p class=what></p>
 	</div>
+	<div class="humidover">
+		<p class=humidnow></p>
+	</div>
 		<div onclick="application.goToTargetView(event)" id="ID46_">
 			<span></span>
 		</div>
@@ -1001,7 +1010,39 @@ function myfunction(){
 	
 		
 	})	  
+	humidity();
+}
+
+function humidity() {
+	var humidity= document.querySelector('.humidnow') 
+
+	fetch('https://api.openweathermap.org/data/2.5/weather?q=Shoreview&appid=226665da3951803c74770f482ea4c65b')
+	.then(response => response.json())
+	.then(data => {
 	
+	var humidityValue = data['main']['humidity']
+	
+	
+	humidity.innerHTML = humidityValue + "%"
+	
+		
+	})
+}
+
+function wind() {
+	var wind= document.querySelector('.windnow') 
+
+	fetch('https://api.openweathermap.org/data/2.5/weather?q=Shoreview&appid=226665da3951803c74770f482ea4c65b')
+	.then(response => response.json())
+	.then(data => {
+	
+	var windValue = ((data['wind']['speed'])*2.237)
+	
+	
+	wind.innerHTML = windValue + " MPH"
+	
+		
+	})
 }
 
 
