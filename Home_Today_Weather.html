@@ -71,6 +71,7 @@
     margin:40px 0;
     font-size:20px;
   }
+
 	#Home_Today_Weather {
 		position: absolute;
 		width: 1920px;
@@ -162,6 +163,15 @@
 		--web-action-type: page;
 		--web-action-target: Home_Today_Weather___1.html;
 		cursor: pointer;
+		
+	}
+	.homegroup1 {
+		transition: transform .8s;
+	}
+	.homegroup1:hover {
+    	-ms-transform: scale(1.1); /* IE 9 */
+    	-webkit-transform: scale(1.1); /* Safari 3-8 */
+ 		transform: scale(1.1); 
 	}
 	#Image_1 {
 		opacity: 0.62;
@@ -526,7 +536,9 @@
 	}
 </style>
 <body onload="myfunction()">
+
 <div id="Home_Today_Weather">
+	<div class="zoom"></div>
 	<div id="txt"></div>
 	<svg class="Rectangle_12" style="opacity: 0.21;">
  	  <svg height="230" width="830">
@@ -546,12 +558,15 @@
              </filter>
             </defs>
             <rect rx="30" ry="30" width="247" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
-  
 </svg></svg>
+
+
 	<svg class="Rectangle_9">
 		<rect fill="rgba(154,195,194,1)" onclick="application.goToTargetView(event)" id="Rectangle_9" rx="46" ry="46" x="0" y="0" width="283" height="284">
 		</rect>
 	</svg>
+	
+
 	<svg class="Rectangle_8" style="opacity: 0.21;">
          <svg height="230" width="230">
           <defs>
@@ -570,6 +585,8 @@
 		<rect fill="url(#Rectangle_7_wh)" onclick="location.href='https://www.weather-clear.com/Home_Today_Weather___1.html';" id="Rectangle_7_wh" rx="24" ry="24" x="0" y="0" width="232" height="232">
 		</rect>
 	</svg>
+
+
 	<img id="Image_1" src="Image_1.png" srcset="Image_1.png 1x, Image_1@2x.png 2x">
 	<img id="Weather_Clear" src="Weather_Clear.png" srcset="Weather_Clear.png 1x, Weather_Clear@2x.png 2x">
 	<div onclick="application.showOverlay('Icon_Menus___1',0,0, event)" id="Group_1">
@@ -625,10 +642,11 @@
 			<p class="desc"></p>
 		  </div>
 		</div>
-	<div class="final" onclick="location.href='https://www.weather-clear.com/Home_Today_Weather___1.html';">
-		<p class=what></p>
-	</div>
 	
+		<div class="final" onclick="location.href='https://www.weather-clear.com/Home_Today_Weather___1.html';">
+			<p class=what></p>
+		</div>
+		
 	<div  id="ID46_">
 		<span></span>
 	</div>
