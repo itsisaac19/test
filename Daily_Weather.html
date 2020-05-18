@@ -1245,6 +1245,51 @@
 	}
 </style>
 <script id="applicationScript">
+
+
+
+
+function month() {
+	var month = new Array();
+	month[0] = "JANUARY";
+    month[1] = "FEBRUARY";
+    month[2] = "MARCH";
+    month[3] = "APRIL";
+    month[4] = "MAY";
+    month[5] = "JUNE";
+    month[6] = "JULY";
+    month[7] = "AUGUST";
+    month[8] = "SEPTEMBER";
+    month[9] = "OCTOBER";
+    month[10] = "NOVEMBER";
+    month[11] = "DECEMBER";
+
+	var d = new Date();
+	var n = month[d.getMonth()];
+	var x = d.getDate();
+	document.getElementById("JULY_2020").innerHTML = n + " 2020"
+
+	
+}
+
+
+function weekdays() {
+  var d = new Date();
+  var weekday = new Array(7);
+  weekday[0] = "SUNDAY";
+  weekday[1] = "MONDAY";
+  weekday[2] = "TUESDAY";
+  weekday[3] = "WEDNESDAY";
+  weekday[4] = "THURSDAY";
+  weekday[5] = "FRIDAY";
+  weekday[6] = "SATURDAY";
+
+  var numberday = weekday[d.getDay()];
+  document.getElementById("SAT").innerHTML = numberday;
+}
+
+
+
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
@@ -3667,7 +3712,7 @@ var Application = function() {
 window.application = new Application();
 </script>
 </head>
-<body>
+<body onload="month()">
 <div id="Daily_Weather">
 	<svg class="Rectangle_38" style="opacity: 0.21;">
  	  <svg height="230" width="1000">
