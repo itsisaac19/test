@@ -1621,6 +1621,11 @@ function weekdays() {
  
 
 }
+
+//function days() {
+
+//}
+
 function test(){
 
 	fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
@@ -1628,7 +1633,9 @@ function test(){
 		.then(data => console.log(data))
 
 }
+
 test();
+
 function daily() {
 
 		fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
@@ -1645,7 +1652,39 @@ function daily() {
 		document.getElementById("PARTLY_CLOUDY").innerHTML = desctodayValue;
 		document.getElementById("ID50_").innerHTML = tempmaxtodayValue + "°";
 		document.getElementById("ID42_").innerHTML = tempmintodayValue + "°";
-			
+
+		//Day 2 UNDER ------------------------	
+
+		var tempmin2Value = Math.floor((data['daily'][1]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax2Value = Math.floor((data['daily'][1]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc2Value = data['daily'][1]['weather'][0]['description'];
+		
+		document.getElementById("SUNNY").innerHTML = desc2Value;
+		document.getElementById("ID54_").innerHTML = tempmax2Value + "°";
+		document.getElementById("ID43_").innerHTML = tempmin2Value + "°";
+
+		//Day 3 UNDER ------------------------	
+
+		var tempmin3Value = Math.floor((data['daily'][2]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax3Value = Math.floor((data['daily'][2]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc3Value = data['daily'][2]['weather'][0]['description'];
+		
+		document.getElementById("RAIN").innerHTML = desc3Value;
+		document.getElementById("ID46_").innerHTML = tempmax3Value + "°";
+		document.getElementById("ID38_").innerHTML = tempmin3Value + "°";
+
+		//Day 4 UNDER ------------------------
+
+		var tempmin4Value = Math.floor((data['daily'][3]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax4Value = Math.floor((data['daily'][3]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc4Value = data['daily'][3]['weather'][0]['description'];
+		
+		document.getElementById("DRIZZLE").innerHTML = desc4Value;
+		document.getElementById("ID49_").innerHTML = tempmax4Value + "°";
+		document.getElementById("ID42__vq").innerHTML = tempmin4Value + "°";	
 		}) 
 		
 	}
