@@ -1244,7 +1244,7 @@
 		transform: matrix(1,0,0,1,0,0);
 	}
 </style>
-<body onload="month()">
+<body onload="daily()">
 	<div id="Daily_Weather">
 		<svg class="Rectangle_38" style="opacity: 0.21;">
 		   <svg height="230" width="1000">
@@ -1592,7 +1592,8 @@ function month() {
 
 	weekdays();
 }
-
+	
+month();
 
 function weekdays() {
   var d = new Date();
@@ -1616,8 +1617,38 @@ function weekdays() {
 
   var fourse = weekday[d.getDay()+3];
   document.getElementById("TUES").innerHTML = fourse
-}
 
+ 
+
+}
+function test(){
+
+	fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
+		.then(response => response.json())
+		.then(data => console.log(data))
+
+}
+test();
+function daily() {
+
+		fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
+		.then(response => response.json())
+		.then(data => {
+		
+		const KELVIN = 273; 
+
+		var tempmintodayValue = Math.floor((data['daily'][0]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmaxtodayValue = Math.floor((data['daily'][0]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desctodayValue = data['daily'][0]['weather'][0]['description'];
+		
+		document.getElementById("PARTLY_CLOUDY").innerHTML = desctodayValue;
+		document.getElementById("ID50_").innerHTML = tempmaxtodayValue + "°";
+		document.getElementById("ID42_").innerHTML = tempmintodayValue + "°";
+			
+		}) 
+		
+	}
 
 ///////////////////////////////////////
 // INITIALIZATION
