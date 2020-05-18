@@ -1597,13 +1597,13 @@ function month() {
 function weekdays() {
   var d = new Date();
   var weekday = new Array(7);
-  weekday[0] = "SUNDAY";
-  weekday[1] = "MONDAY";
-  weekday[2] = "TUESDAY";
-  weekday[3] = "WEDNESDAY";
-  weekday[4] = "THURSDAY";
-  weekday[5] = "FRIDAY";
-  weekday[6] = "SATURDAY";
+  weekday[0] = "SUN";
+  weekday[1] = "MON";
+  weekday[2] = "TUE";
+  weekday[3] = "WED";
+  weekday[4] = "THU";
+  weekday[5] = "FRI";
+  weekday[6] = "SAT";
 
   var numberday = weekday[d.getDay()];
   document.getElementById("SAT").innerHTML = numberday;
