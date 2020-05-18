@@ -1599,7 +1599,7 @@ function weekdays() {
   var weekday = new Array(7);
   weekday[0] = "SUN";
   weekday[1] = "MON";
-  weekday[2] = "TUE";
+  weekday[2] = "TUES";
   weekday[3] = "WED";
   weekday[4] = "THU";
   weekday[5] = "FRI";
@@ -1607,8 +1607,16 @@ function weekdays() {
 
   var numberday = weekday[d.getDay()];
   document.getElementById("SAT").innerHTML = numberday;
-}
 
+  var twose = weekday[d.getDay()+1];
+  document.getElementById("SUN").innerHTML = twose
+
+  var threese = weekday[d.getDay()+2];
+  document.getElementById("MON").innerHTML = threese
+
+  var fourse = weekday[d.getDay()+3];
+  document.getElementById("TUES").innerHTML = fourse
+}
 
 
 ///////////////////////////////////////
