@@ -712,7 +712,7 @@
 		position: absolute;
 		left: 36px;
 		top: 714px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 92px;
 		text-align: center;
@@ -727,7 +727,7 @@
 		position: absolute;
 		left: 1446px;
 		top: 714px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 92px;
 		text-align: center;
@@ -742,7 +742,7 @@
 		position: absolute;
 		left: 1720px;
 		top: 714px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 92px;
 		text-align: center;
@@ -757,7 +757,7 @@
 		position: absolute;
 		left: 304px;
 		top: 729px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 43px;
 		text-align: center;
@@ -772,7 +772,7 @@
 		position: absolute;
 		left: 572px;
 		top: 728px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 52px;
 		text-align: center;
@@ -787,7 +787,7 @@
 		position: absolute;
 		left: 875px;
 		top: 729px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 44px;
 		text-align: center;
@@ -802,7 +802,7 @@
 		position: absolute;
 		left: 1166px;
 		top: 729px;
-		overflow: visible;
+		overflow: auto;
 		width: 171px;
 		height: 42px;
 		text-align: center;
@@ -3083,6 +3083,156 @@ function weekdays() {
 
   var sevense = weekday[d.getDay()+6];
   document.getElementById("FRI").innerHTML = sevense
+
+  api();
+}
+
+function test() {
+fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
+		.then(response => response.json())
+		.then(data => console.log(data))
+		}
+
+function api() {
+		
+	    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
+		.then(response => response.json())
+		.then(data => {
+		
+		const KELVIN = 273; 
+
+		var tempmintodayValue = Math.floor((data['daily'][0]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmaxtodayValue = Math.floor((data['daily'][0]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desctodayValue = data['daily'][0]['weather'][0]['description'];
+		
+		document.getElementById("PARTLY_CLOUDY").innerHTML = desctodayValue;
+		document.getElementById("ID50_").innerHTML = tempmaxtodayValue + "°";
+		document.getElementById("ID42_").innerHTML = tempmintodayValue + "°";
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][0]['humidity'];
+		var windValue = Math.floor((data['daily'][0]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31_").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH_").innerHTML = windValue + " MPH";
+
+		//Day 2 UNDER ------------------------	
+
+		var tempmin2Value = Math.floor((data['daily'][1]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax2Value = Math.floor((data['daily'][1]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc2Value = data['daily'][1]['weather'][0]['description'];
+		
+		document.getElementById("SUNNY").innerHTML = desc2Value;
+		document.getElementById("ID54_").innerHTML = tempmax2Value + "°";
+		document.getElementById("ID43_").innerHTML = tempmin2Value + "°";
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][1]['humidity'];
+		var windValue = Math.floor((data['daily'][1]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31__mj").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH__mk").innerHTML = windValue + " MPH";
+
+		//Day 3 UNDER ------------------------	
+
+		var tempmin3Value = Math.floor((data['daily'][2]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax3Value = Math.floor((data['daily'][2]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc3Value = data['daily'][2]['weather'][0]['description'];
+		
+		document.getElementById("RAIN").innerHTML = desc3Value;
+		document.getElementById("ID46_").innerHTML = tempmax3Value + "°";
+		document.getElementById("ID38_").innerHTML = tempmin3Value + "°";
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][2]['humidity'];
+		var windValue = Math.floor((data['daily'][2]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31__mm").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH__mn").innerHTML = windValue + " MPH";
+
+		//Day 4 UNDER ------------------------
+
+		var tempmin4Value = Math.floor((data['daily'][3]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax4Value = Math.floor((data['daily'][3]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc4Value = data['daily'][3]['weather'][0]['description'];
+		
+		document.getElementById("DRIZZLE").innerHTML = desc4Value;
+		document.getElementById("ID49_").innerHTML = tempmax4Value + "°";
+		document.getElementById("ID42__jh").innerHTML = tempmin4Value + "°";	
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][3]['humidity'];
+		var windValue = Math.floor((data['daily'][3]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31__mp").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH__mq").innerHTML = windValue + " MPH";
+
+		//Day 5 UNDER ------------------------
+
+		var tempmin5Value = Math.floor((data['daily'][4]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax5Value = Math.floor((data['daily'][4]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc5Value = data['daily'][4]['weather'][0]['description'];
+		
+		document.getElementById("CLOUDY").innerHTML = desc5Value;
+		document.getElementById("ID48_").innerHTML = tempmax5Value + "°";
+		document.getElementById("ID40_").innerHTML = tempmin5Value + "°";	
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][4]['humidity'];
+		var windValue = Math.floor((data['daily'][4]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31__ms").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH__mt").innerHTML = windValue + " MPH";
+
+		//Day 6 UNDER ------------------------
+
+		var tempmin6Value = Math.floor((data['daily'][5]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax6Value = Math.floor((data['daily'][5]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc6Value = data['daily'][5]['weather'][0]['description'];
+		
+		document.getElementById("PARTLY_CLOUDY_i").innerHTML = desc4Value;
+		document.getElementById("ID53_").innerHTML = tempmax6Value + "°";
+		document.getElementById("ID44_").innerHTML = tempmin6Value + "°";
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][5]['humidity'];
+		var windValue = Math.floor((data['daily'][5]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31__mv").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH__mw").innerHTML = windValue + " MPH";
+
+		//Day 7 UNDER ------------------------
+
+		var tempmin7Value = Math.floor((data['daily'][6]['temp']['min'] - KELVIN)*9/5+32);
+		var tempmax7Value = Math.floor((data['daily'][6]['temp']['max'] - KELVIN)*9/5+32);
+		
+		var desc7Value = data['daily'][6]['weather'][0]['description'];
+		
+		document.getElementById("PARTLY_CLOUDY_ja").innerHTML = desc4Value;
+		document.getElementById("ID56_").innerHTML = tempmax7Value + "°";
+		document.getElementById("ID45_").innerHTML = tempmin7Value + "°";
+
+		//wind and humidity
+
+		var humidityValue = data['daily'][6]['humidity'];
+		var windValue = Math.floor((data['daily'][6]['wind_speed'])*2.237);
+	
+		document.getElementById("ID31__m").innerHTML = humidityValue + "%";
+		document.getElementById("ID4MPH__my").innerHTML = windValue + " MPH";
+
+		}) 
 }
 
 
