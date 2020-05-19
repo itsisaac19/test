@@ -62,6 +62,26 @@
 		color: rgba(122,136,135,1);
 		letter-spacing: 2px;
 	}
+	.windover{
+	  font-family: Europa;
+  }
+  
+  .windnow{
+	position: absolute;
+		left: 658px;
+		top: 923px;
+		overflow: visible;
+		width: 214px;
+		height: 104px;
+		text-align: center;
+		font-family: Europa;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 40px;
+		color: rgba(122,136,135,1);
+		letter-spacing: 2px;
+	
+	}
   .final{
 	  font-family: Continuo;
   }
@@ -852,7 +872,7 @@
 			</svg>
 		</div>
 		<div id="ID6MPH_">
-			<span>6MPH </span>
+			<span> </span>
 		</div>
 		<div id="ID2_30_PM">
 			<span>2:30 PM</span>
@@ -1018,38 +1038,26 @@ function myfunction(){
 }
 
 function humidity() {
-	var humidity= document.querySelector('.humidnow') 
+	
+	var humid = document.querySelector('.humidnow');
+	var wind = document.querySelector('.windnow');
 
 	fetch('https://api.openweathermap.org/data/2.5/weather?q=Shoreview&appid=226665da3951803c74770f482ea4c65b')
 	.then(response => response.json())
 	.then(data => {
 	
-	var humidityValue = data['main']['humidity']
+	var humidityValue = data['main']['humidity'];
+	var windValue = Math.floor((data['wind']['speed'])*2.237);
 	
-	
-	humidity.innerHTML = humidityValue + "%"
-	
-		
-	})
-}
-
-function wind() {
-	var wind= document.querySelector('.windnow') 
-
-	fetch('https://api.openweathermap.org/data/2.5/weather?q=Shoreview&appid=226665da3951803c74770f482ea4c65b')
-	.then(response => response.json())
-	.then(data => {
-	
-	var windValue = ((data['wind']['speed'])*2.237)
-	
-	
+	humid.innerHTML = humidityValue + "%";
 	wind.innerHTML = windValue + " MPH"
+
 	
-		
 	})
 }
 
-//FINISH THIS TONIGHT
+
+
 
 
 
