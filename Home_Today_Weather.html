@@ -74,7 +74,7 @@
 
 	#Home_Today_Weather {
 		position: absolute;
-		width: 1920px;
+		width: 2000px;
 		height: 1080px;
 		background: linear-gradient(180deg, rgba(212,221,221,1) 0%, rgba(138,186,189,1) 100%);
 		overflow: hidden;
@@ -534,6 +534,14 @@
 		left: 0px;
 		top: 0px;
 	}
+	.map {
+		position: relative;
+		overflow: hidden;
+		top: 14px;
+		right: 17px;
+		width: 856px;
+		height: 690px;
+	}	
 </style>
 <body onload="myfunction()">
 
@@ -684,7 +692,7 @@
 		<span>July 29</span>
 	</div>
 	<svg class="Rectangle_11">
-		<rect fill="rgba(161,198,197,1)" id="Rectangle_11" rx="41" ry="41" x="0" y="0" width="856" height="717">
+		<rect fill="rgba(161,198,197,1)" id="Rectangle_11" rx="10" ry="10" x="0" y="0" width="856" height="717">
 		</rect>
 	</svg>
 	<div id="_Radar_">
@@ -716,6 +724,11 @@
 			<ellipse fill="rgba(80,80,80,1)" stroke="rgba(112,112,112,1)" stroke-width="3px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Ellipse_9" rx="31" ry="31" cx="31" cy="31">
 			</ellipse>
 		</svg>
+	</div>
+	<div class = "Rectangle_11">
+		<div class="map" style="text-align: right;">
+			<iframe src="https://www.rainviewer.com/map.html?loc=38.9167,-79.519,6&amp;oFa=0&amp;oC=0&amp;oU=0&amp;oCS=1&amp;oF=0&amp;oAP=0&amp;rmt=4&amp;c=1&amp;o=83&amp;lm=0&amp;th=0&amp;sm=1&amp;sn=1" width="96%" frameborder="0" style="border:0;height: 73vh;" allowfullscreen=""></iframe>
+		</div>
 	</div>
 </div>
 </body>
