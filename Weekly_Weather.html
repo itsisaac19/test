@@ -2273,7 +2273,7 @@
 		top: 0px;
 	}
 </style>
-<body>
+<body onload="weekdays()">
 	<div id="Weekly_Weather">
 		<svg class="Rectangle_62_ha">
 			<linearGradient id="Rectangle_62_ha" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
@@ -3044,6 +3044,48 @@
 	</div>
 	</body>
 <script id="applicationScript">
+
+function weekdays() {
+  var d = new Date();
+  var weekday = new Array(14);
+  weekday[0] = "SUN";
+  weekday[1] = "MON";
+  weekday[2] = "TUES";
+  weekday[3] = "WED";
+  weekday[4] = "THU";
+  weekday[5] = "FRI";
+  weekday[6] = "SAT";
+  weekday[7] = "SUN";
+  weekday[8] = "MON";
+  weekday[9] = "TUES";
+  weekday[10] = "WED";
+  weekday[11] = "THU";
+  weekday[12] = "FRI";
+  weekday[13] = "SAT";
+
+  var numberday = weekday[d.getDay()];
+  document.getElementById("SAT").innerHTML = numberday;
+
+  var twose = weekday[d.getDay()+1];
+  document.getElementById("SUN").innerHTML = twose
+
+  var threese = weekday[d.getDay()+2];
+  document.getElementById("MON").innerHTML = threese
+
+  var fourse = weekday[d.getDay()+3];
+  document.getElementById("TUES").innerHTML = fourse
+
+  var fivese = weekday[d.getDay()+4];
+  document.getElementById("WED").innerHTML = fivese
+
+  var sixse = weekday[d.getDay()+5];
+  document.getElementById("THU").innerHTML = sixse
+
+  var sevense = weekday[d.getDay()+6];
+  document.getElementById("FRI").innerHTML = sevense
+}
+
+
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
