@@ -773,6 +773,7 @@ function myFunction2() {
 	var n = month[d.getMonth()];
 	var x = d.getDate();
 	document.getElementById("July_29").innerHTML = n + " "+ x;
+	test();
 }
 
 myFunction2();
@@ -823,8 +824,13 @@ function myfunction(){
 	
 }
 	
+function test() {
+	fetch('https://api.openweathermap.org/data/2.5/weather?q=Shoreview&appid=226665da3951803c74770f482ea4c65b')
+	.then(response => response.json())
+	.then(data => console.log(data))
+}
 	
-	//... HERE, copy paste to Home , etc. ___1.html
+	
 	
 	
 	var Application = function() {
