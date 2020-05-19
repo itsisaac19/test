@@ -229,6 +229,7 @@
 		font-size: 30px;
 		color: rgba(207,144,20,1);
 	}
+
 	#_ONLY_SHORVIEW_AS_OF_4_15_2020 {
 		position: absolute;
 		left: 499px;
@@ -243,6 +244,30 @@
 		font-size: 20px;
 		color: rgba(122,136,135,1);
 	}
+	.final {
+		transition: transform,.8s;
+	}
+	.final:hover {
+ 		-ms-transform: scale(1.1); /* IE 9 */
+  		-webkit-transform: scale(1.1); /* Safari 3-8 */
+  		transform: scale(1.01); 
+}
+	.testzoom {
+  		padding: 0px;
+  		background-color: rgb(170, 205, 209);
+  		transition: transform .8s;
+		margin: 0 auto;
+		border-radius: 41px;
+		position: absolute;
+		overflow: hidden;
+		width: 247px;
+		height: 86px;
+		left: 1026px;
+		top: 703px;
+	}
+
+	
+}
 </style>
 <script id="applicationScript">
 ///////////////////////////////////////
@@ -2706,7 +2731,7 @@ window.application = new Application();
 		</svg>
 	</div>
 	<div id="Get_your_Daily_weather_faster_">
-		<span>Get your Daily weather faster than ever WITH    </span>
+		<span>FREE FOREVER. NO ADS. THIS IS...    </span>
 	</div>
 	<div id="WEATHER_CLEAR">
 		<span>WEATHER CLEAR</span>
@@ -2722,11 +2747,16 @@ window.application = new Application();
 		<rect fill="rgba(188,212,211,1)" onclick="application.goToTargetView(event)" id="Rectangle_6" rx="40" ry="40" x="0" y="0" width="247" height="86">
 		</rect>
 	</svg>
-	<div onclick="application.goToTargetView(event)" id="Let_s_go_">
-		<span>Let's go!</span>
-	</div>
+		
 	<div id="_ONLY_SHORVIEW_AS_OF_4_15_2020">
 		<span>(ONLY SHORVIEW AS OF 4/15/2020)</span>
+	</div>
+	<div class = "final">
+		<div class="testzoom"  onclick="location.href='https://www.weather-clear.com/Home_Today_Weather.html';">
+		</div>
+		<div onclick="location.href='https://www.weather-clear.com/Home_Today_Weather.html';" id="Let_s_go_">
+			<span>Let's go!</span>
+		</div>
 	</div>
 </div>
 </body>
