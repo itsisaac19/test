@@ -1042,7 +1042,7 @@
 	}
 	#ID31_ {
 		position: absolute;
-		left: 943px;
+		left: 953px;
 		top: 728px;
 		overflow: visible;
 		width: 99px;
@@ -1312,10 +1312,10 @@
 	}
 	#ID7_ {
 		position: absolute;
-		left: 833px;
+		left: 800px;
 		top: 728px;
 		overflow: visible;
-		width: 70px;
+		width: 180px;
 		height: 62px;
 		text-align: left;
 		font-family: Europa, sans-serif;
@@ -1819,16 +1819,23 @@ test();
 
 function daynight () {
 	
-	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	var d = new Date();
+	var n = d.getMonth()+1;
+	var x = d.getDate()+1;
+	var next2days = "2020-0" + n + "-"+ x  
+
+	console.log(next2days)
+
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next2days+'T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
-	var humiditytodaymin =  Math.floor(data[0]["humidity"][1]["max"]["value"]);
+	var humiditytodaymax =  Math.floor(data[0]["humidity"][1]["max"]["value"]);
 	var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"])
 
-	document.getElementById("ID31_").innerHTML = humiditytodaymin + "%";
+	document.getElementById("ID31_").innerHTML = humiditytodaymax + "%";
 	document.getElementById("ID7_").innerHTML = precipmax + " in/hr"
-	console.log(humiditytodaymin)
+	console.log(humiditytodaymax)
 	})
 	
 }
