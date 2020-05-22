@@ -963,22 +963,31 @@
 
 if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 
+function preciptest() {
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T10%3A30%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	.then(response => response.json())
+	.then(data => console.log(data))
+}
+
+preciptest();
+
 function precip() {
 	
-	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T10%3A30%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
 	
-	var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"])
+	var precipchance = Math.floor(data[0]["precipitation_probability"]["value"])
 
-	document.getElementById("ID11_").innerHTML = precipmax + " in/hr"
+	document.getElementById("ID11_").innerHTML = precipchance + "%"
 	
-	console.log(precipmax)
+	console.log(precipchance)
 	})
 	
 }
-
+//make this code ABOVE current hourly because hourly has precip chance! Climacell rocks. So yeah. Change to '0' hourly. U know the drill.
+//Plus it won't need any other coding because 0 is always the current hour. Maybe try Nowcast? IDK if it has precip chance tho.
 
 
 function willthiswork() {
