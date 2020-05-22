@@ -963,6 +963,24 @@
 
 if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 
+function precip() {
+	
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	.then(response => response.json())
+	.then(data => {
+
+	
+	var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"])
+
+	document.getElementById("ID11_").innerHTML = precipmax + " in/hr"
+	
+	console.log(precipmax)
+	})
+	
+}
+
+
+
 function willthiswork() {
 	clock();  
     function clock() {
@@ -1010,6 +1028,8 @@ function myFunction2() {
 	var n = month[d.getMonth()];
 	var x = d.getDate();
 	document.getElementById("July_29").innerHTML = n + " "+ x;
+
+	precip();
 }
 
 myFunction2();
