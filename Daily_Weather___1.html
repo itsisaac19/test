@@ -1809,6 +1809,32 @@
 	</body>
 <script id="applicationScript">
 
+function test () {
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	.then(response => response.json())
+	.then(data => console.log(data))
+}
+
+test();
+
+function daynight () {
+	
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	.then(response => response.json())
+	.then(data => {
+
+	var humiditytodaymin =  Math.floor(data[0]["humidity"][1]["max"]["value"]);
+	var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"])
+
+	document.getElementById("ID31_").innerHTML = humiditytodaymin + "%";
+	document.getElementById("ID7_").innerHTML = precipmax + " in/hr"
+	console.log(humiditytodaymin)
+	})
+	
+}
+
+daynight();
+
 function daily() {
 
 fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
@@ -1835,7 +1861,7 @@ var desc2Value = data['daily'][1]['weather'][0]['description'];
 
 document.getElementById("SUNNY").innerHTML = desc2Value;
 document.getElementById("ID54_").innerHTML = tempmax2Value + "°";
-document.getElementById("ID43_").innerHTML = tempmin2Value + "°";	
+document.getElementById("ID43__fj").innerHTML = tempmin2Value + "°";	
 }) 
 month1();
 }
