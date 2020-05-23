@@ -1847,6 +1847,14 @@ function dayhighlow () {
 	document.getElementById("ID4MPH_").innerHTML = windmax + " MPH"
 
 	console.log(windmax)
+
+	var humiditytodaymin =  Math.floor(data[0]["humidity"][0]["min"]["value"]);
+	//var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"]);
+	var windmin = Math.floor(data[0]["wind_speed"][0]["min"]["value"]);
+
+	document.getElementById("ID43_").innerHTML = humiditytodaymin + "%";
+	//document.getElementById("ID1_").innerHTML = precipmin + " in/hr"
+	document.getElementById("ID7MPH_").innerHTML = windmin + " MPH"
 	})
 	
 }
