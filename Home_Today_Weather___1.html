@@ -964,7 +964,17 @@
 if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 
 function preciptest() {
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T10%3A30%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+
+	var d = new Date();
+	var x = d.getDate()+1;
+	var n = d.getMonth()+1;
+	
+	if (n < 10) {
+		n = "0" + n;
+	}
+	var nexthour = "2020-" + n + "-"+ x
+
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => console.log(data))
 }
@@ -972,8 +982,18 @@ function preciptest() {
 preciptest();
 
 function precip() {
+
+	var d = new Date();
+	var x = d.getDate()+1;
+	var n = d.getMonth()+1;
 	
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T10%3A30%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	if (n < 10) {
+		n = "0" + n;
+	}
+	var nexthour = "2020-" + n + "-"+ x
+	console.log(nexthour)
+	
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
