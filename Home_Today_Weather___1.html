@@ -974,7 +974,7 @@ function preciptest() {
 	}
 	var nexthour = "2020-" + n + "-"+ x
 
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => console.log(data))
 }
@@ -993,7 +993,7 @@ function precip() {
 	var nexthour = "2020-" + n + "-"+ x
 	console.log(nexthour)
 	
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
