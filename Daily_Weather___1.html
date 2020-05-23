@@ -1653,10 +1653,10 @@
 			</rect>
 		</svg>
 		<div id="TODAY_ed">
-			<span>TODAY</span>
+			<span>HIGH</span>
 		</div>
 		<div id="TONIGHT">
-			<span>TONIGHT</span>
+			<span>LOW</span>
 		</div>
 		<svg class="Line_20" viewBox="0 0 1 302.5">
 			<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_20" d="M 0 0 L 0 302.5">
@@ -1810,37 +1810,48 @@
 <script id="applicationScript">
 
 function test () {
-	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-23T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+
+	var d = new Date();
+	var n = d.getMonth()+1;
+	var x = d.getDate()+2;
+	var next2days = "2020-0" + n + "-"+ x  
+
+	
+
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next2days+'T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => console.log(data))
 }
 
 test();
 
-function daynight () {
+function dayhighlow () {
 	
 	var d = new Date();
 	var n = d.getMonth()+1;
-	var x = d.getDate()+1;
+	var x = d.getDate()+2;
 	var next2days = "2020-0" + n + "-"+ x  
 
 	console.log(next2days)
 
-	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next2days+'T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next2days+'T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
 	var humiditytodaymax =  Math.floor(data[0]["humidity"][1]["max"]["value"]);
-	var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"])
+	var precipmax = Math.floor(data[0]["precipitation"][0]["max"]["value"]);
+	var windmax = Math.floor(data[0]["wind_speed"][1]["max"]["value"]);
 
 	document.getElementById("ID31_").innerHTML = humiditytodaymax + "%";
 	document.getElementById("ID7_").innerHTML = precipmax + " in/hr"
-	console.log(humiditytodaymax)
+	document.getElementById("ID4MPH_").innerHTML = windmax + " MPH"
+
+	console.log(windmax)
 	})
 	
 }
 
-daynight();
+dayhighlow();
 
 function daily() {
 
