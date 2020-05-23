@@ -3569,20 +3569,17 @@ function test(){
 		.then(response => response.json())
 		.then(data => console.log(data))
 }
-function masterapi() {
+function currentdesc() {
 
 	    
 
 		fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,daily&appid=024402f357b3f2165dff5e013cebfd7b')
 		.then(response => response.json())
 		.then(data => {
-		
-		
+	
    	 	var now = new Date();
     	var TwentyFourHour = now.getHours();
     	var hour = now.getHours();
-   
-		var end = 'go';
 
     	var mid = 'PM';
   
@@ -3598,28 +3595,14 @@ function masterapi() {
 	
 		const KELVIN = 273;
 
-		//1st row
+		//current description
 		var currentdesc = ("PARTLY_CLOUDY"+hour+mid);
-		var currenttemp = ("ID46"+ hour+mid);
-		var currenthumidity = ("ID35"+hour+mid);
-		var currentwind = ("ID6mph"+hour+mid);
 		
-		var tempnowValue = Math.floor((data['hourly'][0]['temp'] - KELVIN)*9/5+32);
 		var descnowValue = data['hourly'][0]['weather'][0]['description'];
 		
 		document.getElementById(currentdesc).innerHTML = descnowValue;
-		document.getElementById(currenttemp).innerHTML = tempnowValue + "°";
-		
-		console.log(currenttemp);
-		console.log(tempnowValue);
-
-		//wind and humidity
-
-		var humiditynowValue = data['hourly'][0]['humidity'];
-		var windnowValue = Math.floor((data['hourly'][0]['wind_speed'])*2.237);
 	
-		document.getElementById(currenthumidity).innerHTML = humiditynowValue + "%";
-		document.getElementById(currentwind).innerHTML = windnowValue + " mph";
+		console.log(descnowValue);
 
 		})
 		test();
