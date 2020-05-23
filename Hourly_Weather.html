@@ -1934,7 +1934,7 @@
 		font-size: 40px;
 		color: rgba(122,136,135,1);
 	}
-	#ID46__ri {
+	#ID4611AM {
 		position: absolute;
 		left: 420px;
 		top: 1096px;
@@ -2131,7 +2131,7 @@
 		color: rgba(122,136,135,1);
 		letter-spacing: 1px;
 	}
-	#ID11__sb {
+	#ID1111AM {
 		position: absolute;
 		left: 532px;
 		top: 1095px;
@@ -2206,7 +2206,7 @@
 		color: rgba(122,136,135,1);
 		letter-spacing: 1px;
 	}
-	#ID35__sb {
+	#ID3511AM {
 		position: absolute;
 		left: 641px;
 		top: 1096px;
@@ -2281,7 +2281,7 @@
 		color: rgba(122,136,135,1);
 		letter-spacing: 1px;
 	}
-	#ID6mph_sc {
+	#ID6mph11AM {
 		position: absolute;
 		left: 739px;
 		top: 1095px;
@@ -3328,7 +3328,7 @@
 		<div id="ID46__rh">
 			<span>46°</span>
 		</div>
-		<div id="ID46__ri">
+		<div id="ID4611AM">
 			<span>46°</span>
 		</div>
 		<div id="ID4610">
@@ -3393,7 +3393,7 @@
 		<div id="ID11__sa">
 			<span>11%</span>
 		</div>
-		<div id="ID11__sb">
+		<div id="ID1111AM">
 			<span>11%</span>
 		</div>
 		<div id="ID11__sc">
@@ -3408,7 +3408,7 @@
 		<div id="ID35__sa">
 			<span>35%</span>
 		</div>
-		<div id="ID35__sb">
+		<div id="ID3511AM">
 			<span>35%</span>
 		</div>
 		<div id="ID3510">
@@ -3423,7 +3423,7 @@
 		<div id="ID6mph_sb">
 			<span>6mph</span>
 		</div>
-		<div id="ID6mph_sc">
+		<div id="ID6mph11AM">
 			<span>6mph</span>
 		</div>
 		<div id="ID6mph10">
@@ -3564,6 +3564,81 @@
 	</body>
 <script id="applicationScript">
 
+function climacelltest() {
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-27T12%3A00%3A00&fields=precipitation_probability%2Chumidity%2Cwind_speed%2Ctemp&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+		.then(response => response.json())
+		.then(data => console.log(data))
+}
+climacelltest();
+
+function climacell() {
+
+	//REFERENCE TIME:
+	var f = new Date();
+	var u = f.getMonth()+1;
+	var c = f.getDate()+4;
+
+	if (u < 10) {
+		u = "0" + u;
+	}
+	if (c > 31) {
+		if (u="05") {
+			console.log("ALERT OVERFLOWING FROM MAY TO JUNE");
+			c = (c - 31)
+		}
+	} 
+	//IMPLEMENT OVERFLOW FOR ALL MONTHS
+
+	var next4days = "2020-" + u + "-"+ c  
+	console.log(next4days)
+	//API FETCH:
+		fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next4days+'T12%3A00%3A00&fields=precipitation_probability%2Chumidity%2Cwind_speed%2Ctemp&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+		.then(response => response.json())
+		.then(data => {
+
+		var now = new Date();
+    	var TwentyFourHour = now.getHours();
+    	var hour = now.getHours();
+
+    	var mid = 'PM';
+  
+    	if (hour > 12) {
+      	hour = hour - 12;
+    	}    
+    	if(hour==0){ 
+      	hour=12;
+    	}
+    	if(TwentyFourHour < 12) {
+       	mid = 'AM';
+		}
+	
+		//CURRENT weather
+		var currenttemp = ("ID46"+hour+mid);
+		var tempnowValue = Math.floor (data[0]['temp']['value']);
+		
+		document.getElementById(currenttemp).innerHTML = tempnowValue + '°';
+		console.log(tempnowValue);
+		//precip
+		var currentprecipchance = ("ID11"+hour+mid);
+		var precipchancenowValue = Math.floor(data[0]['precipitation_probability']['value']);
+
+		document.getElementById(currentprecipchance).innerHTML = precipchancenowValue + '%';
+		//humid
+		var currenthumid = ("ID35"+hour+mid);
+		var humidnowValue = Math.floor(data[0]['humidity']['value']);
+
+		document.getElementById(currenthumid).innerHTML = humidnowValue + "%";
+		//wind
+		var currentwind = ("ID6mph"+hour+mid);
+		var windnowValue = Math.floor(data[0]['wind_speed']['value']);
+		
+		document.getElementById(currentwind).innerHTML = windnowValue + "mph";
+
+		})
+}
+
+climacell();
+
 function test(){
 	fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,daily&appid=024402f357b3f2165dff5e013cebfd7b')
 		.then(response => response.json())
@@ -3674,7 +3749,7 @@ function hourmanage() {
 
 
 
-	masterapi();
+	currentdesc();
 
 
 	}
