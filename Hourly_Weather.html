@@ -3302,7 +3302,7 @@
 			<span>11 AM</span>
 		</div>
 		<div id="ID10_AM">
-			<span>10 AM</span>
+			<span>[]</span>
 		</div>
 		<div id="ID9_AM">
 			<span>9 AM</span>
@@ -3317,7 +3317,7 @@
 			<span>PARTLY CLOUDY</span>
 		</div>
 		<div id="PARTLY_CLOUDY10AM">
-			<span>PARTLY CLOUDY</span>
+			<span>[]</span>
 		</div>
 		<div id="PARTLY_CLOUDY9AM">
 			<span>PARTLY CLOUDY</span>
@@ -3565,14 +3565,6 @@
 <script id="applicationScript">
 
 function climacelltest() {
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time=2020-05-27T12%3A00%3A00&fields=precipitation_probability%2Chumidity%2Cwind_speed%2Ctemp&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
-		.then(response => response.json())
-		.then(data => console.log(data))
-}
-climacelltest();
-
-function climacell() {
-
 	//REFERENCE TIME:
 	var f = new Date();
 	var u = f.getMonth()+1;
@@ -3587,10 +3579,41 @@ function climacell() {
 			c = (c - 31)
 		}
 	} 
-	//IMPLEMENT OVERFLOW FOR ALL MONTHS
+	//IMPLEMENT OVERFLOW FOR ALL MONTHS [to-do]
+
+	var next4days = "2020-" + u + "-"+ c  
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next4days+'T12%3A00%3A00&fields=precipitation_probability%2Chumidity%2Cwind_speed%2Ctemp&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+		.then(response => response.json())
+		.then(data => console.log(data))
+}
+climacelltest();
+
+var overflow = "no"
+
+function climacell() {
+	
+	//REFERENCE TIME:
+	var f = new Date();
+	var u = f.getMonth()+1;
+	var c = f.getDate()+4;
+
+	if (u < 10) {
+		u = "0" + u;
+	}
+	if (c > 31) {
+		if (u="05") {
+			console.log("ALERT OVERFLOWING FROM MAY TO JUNE");
+			c = (c - 31)
+		}
+	} 
+	//IMPLEMENT OVERFLOW FOR ALL MONTHS [to-do]
 
 	var next4days = "2020-" + u + "-"+ c  
 	console.log(next4days)
+
+
+
+
 	//API FETCH:
 		fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next4days+'T12%3A00%3A00&fields=precipitation_probability%2Chumidity%2Cwind_speed%2Ctemp&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 		.then(response => response.json())
@@ -3611,33 +3634,250 @@ function climacell() {
     	if(TwentyFourHour < 12) {
        	mid = 'AM';
 		}
-	
+		if((TwentyFourHour == 24)) {
+		mid = 'AM'
+		}
+
+
+
+
+		//CURRENT TIME
+		document.getElementById("ID5_AM").innerHTML = hour + " " + mid
 		//CURRENT weather
-		var currenttemp = ("ID46"+hour+mid);
+		var currenttemp = ("ID465AM");
 		var tempnowValue = Math.floor (data[0]['temp']['value']);
 		
 		document.getElementById(currenttemp).innerHTML = tempnowValue + '°';
 		console.log(tempnowValue);
 		//precip
-		var currentprecipchance = ("ID11"+hour+mid);
+		var currentprecipchance = ("ID11__tg");
 		var precipchancenowValue = Math.floor(data[0]['precipitation_probability']['value']);
 
 		document.getElementById(currentprecipchance).innerHTML = precipchancenowValue + '%';
 		//humid
-		var currenthumid = ("ID35"+hour+mid);
+		var currenthumid = ("ID35__th");
 		var humidnowValue = Math.floor(data[0]['humidity']['value']);
 
 		document.getElementById(currenthumid).innerHTML = humidnowValue + "%";
 		//wind
-		var currentwind = ("ID6mph"+hour+mid);
+		var currentwind = ("ID6mph_ti");
 		var windnowValue = Math.floor(data[0]['wind_speed']['value']);
 		
 		document.getElementById(currentwind).innerHTML = windnowValue + "mph";
 
+
+	
+
+		//+1 HOUR TIME
+		var hour1 = (hour+1)
+		if (hour1 > 12) {
+			hour1 = hour1 - 12
+		}
+		document.getElementById("ID6_AM").innerHTML = hour1 + " " + mid
+		//+1 HOUR WEATHER
+		var currenttemp1 = ("ID466AM");
+		var temp1Value = Math.floor (data[1]['temp']['value']);
+		
+		document.getElementById(currenttemp1).innerHTML = temp1Value + '°';
+	
+		//precip
+		var precipchance1 = ("ID11__s");
+		var precipchance1Value = Math.floor(data[1]['precipitation_probability']['value']);
+
+		document.getElementById(precipchance1).innerHTML = precipchance1Value + '%';
+		//humid
+		var humid1 = ("ID35__s");
+		var humid1Value = Math.floor(data[1]['humidity']['value']);
+
+		document.getElementById(humid1).innerHTML = humid1Value + "%";
+		//wind
+		var wind1 = ("ID6mph_s");
+		var wind1Value = Math.floor(data[1]['wind_speed']['value']);
+		
+		document.getElementById(wind1).innerHTML = wind1Value + "mph";
+
+
+
+
+		//+2 HOUR TIME
+		var hour2 = (hour+2)
+		if (hour2 > 12) {
+			hour2 = hour2 - 12
+		}
+		console.log(hour2)
+		document.getElementById("ID7_AM").innerHTML = hour2 + " " + mid
+		//+2 HOUR WEATHER
+		var currenttemp2 = ("ID467AM");
+		var temp2Value = Math.floor (data[2]['temp']['value']);
+		
+		document.getElementById(currenttemp2).innerHTML = temp2Value + '°';
+	
+		//precip
+		var precipchance2 = ("ID11__sw");
+		var precipchance2Value = Math.floor(data[2]['precipitation_probability']['value']);
+
+		document.getElementById(precipchance2).innerHTML = precipchance2Value + '%';
+		//humid
+		var humid2 = ("ID35__sx");
+		var humid2Value = Math.floor(data[2]['humidity']['value']);
+
+		document.getElementById(humid2).innerHTML = humid2Value + "%";
+		//wind
+		var wind2 = ("ID6mph_sy");
+		var wind2Value = Math.floor(data[2]['wind_speed']['value']);
+		
+		document.getElementById(wind2).innerHTML = wind2Value + "mph";
+
+
+
+
+		//+3 HOUR TIME
+		var hour3 = (hour+3)
+		if (hour3 > 12) {
+			hour3 = hour3 - 12
+		}
+		document.getElementById("ID8_AM").innerHTML = hour3 + " " + mid
+		//+3 HOUR WEATHER
+		var currenttemp3 = ("ID468AM");
+		var temp3Value = Math.floor (data[3]['temp']['value']);
+		
+		document.getElementById(currenttemp3).innerHTML = temp3Value + '°';
+	
+		//precip
+		var precipchance3 = ("ID11__sm");
+		var precipchance3Value = Math.floor(data[3]['precipitation_probability']['value']);
+
+		document.getElementById(precipchance3).innerHTML = precipchance3Value + '%';
+		//humid
+		var humid3 = ("ID35__sn");
+		var humid3Value = Math.floor(data[3]['humidity']['value']);
+
+		document.getElementById(humid3).innerHTML = humid3Value + "%";
+		//wind
+		var wind3 = ("ID6mph_so");
+		var wind3Value = Math.floor(data[3]['wind_speed']['value']);
+		
+		document.getElementById(wind3).innerHTML = wind3Value + "mph";
+
+
+
+
+		//+4 HOUR TIME
+		var hour4 = (hour+4)
+		if (hour4 > 12) {
+			hour4 = hour4 - 12
+		}
+		document.getElementById("ID9_AM").innerHTML = hour4 + " " + mid
+		//+4 HOUR WEATHER
+		var currenttemp4 = ("ID469AM");
+		var temp4Value = Math.floor (data[4]['temp']['value']);
+		
+		document.getElementById(currenttemp4).innerHTML = temp4Value + '°';
+	
+		//precip
+		var precipchance4 = ("ID11__sd");
+		var precipchance4Value = Math.floor(data[4]['precipitation_probability']['value']);
+
+		document.getElementById(precipchance4).innerHTML = precipchance4Value + '%';
+		//humid
+		var humid4 = ("ID35__sd");
+		var humid4Value = Math.floor(data[4]['humidity']['value']);
+
+		document.getElementById(humid4).innerHTML = humid4Value + "%";
+		//wind
+		var wind4 = ("ID6mph_se");
+		var wind4Value = Math.floor(data[4]['wind_speed']['value']);
+		
+		document.getElementById(wind4).innerHTML = wind4Value + "mph";
+
+
+
+
+		//+5 HOUR TIME
+		var hour5 = (hour+5)
+		if (hour5 > 12) {
+			hour5 = hour5 - 12
+		}
+		document.getElementById("ID10_AM").innerHTML = hour5 + " " + mid
+		//+5 HOUR WEATHER
+		var currenttemp5 = ("ID4610AM");
+		var temp5Value = Math.floor (data[5]['temp']['value']);
+		
+		document.getElementById(currenttemp5).innerHTML = temp5Value + '°';
+	
+		//precip
+		var precipchance5 = ("ID11__sc");
+		var precipchance5Value = Math.floor(data[5]['precipitation_probability']['value']);
+
+		document.getElementById(precipchance5).innerHTML = precipchance5Value + '%';
+		//humid
+		var humid5 = ("ID3510");
+		var humid5Value = Math.floor(data[5]['humidity']['value']);
+
+		document.getElementById(humid5).innerHTML = humid5Value + "%";
+		//wind
+		var wind5 = ("ID6mph10");
+		var wind5Value = Math.floor(data[5]['wind_speed']['value']);
+		
+		document.getElementById(wind5).innerHTML = wind5Value + "mph";
+
+
+
+
+		//+6 HOUR TIME
+		var hour6 = (hour+6)
+		if (hour6 > 12) {
+			hour6 = hour6 - 12
+		}
+		// IF THE TIME IS 1 AM to 4 AM IT WILL HIDE ITSELF
+		if ((TwentyFourHour + 6) > 24) {
+			TwentyFourHour = TwentyFourHour - 24
+		}
+		if (TwentyFourHour >= 1) {
+			if (TwentyFourHour <= 4) {
+				console.log("Hiding +6 hourtime")
+			}
+		}
+		document.getElementById("ID11_AM").innerHTML = hour6 + " " + mid
+		//+6 HOUR WEATHER
+		var currenttemp6 = ("ID4611AM");
+		var temp6Value = Math.floor (data[6]['temp']['value']);
+		
+		document.getElementById(currenttemp6).innerHTML = temp6Value + '°';
+	
+		//precip
+		var precipchance6 = ("ID1111AM");
+		var precipchance6Value = Math.floor(data[6]['precipitation_probability']['value']);
+
+		document.getElementById(precipchance6).innerHTML = precipchance6Value + '%';
+		//humid
+		var humid6 = ("ID3511AM");
+		var humid6Value = Math.floor(data[6]['humidity']['value']);
+
+		document.getElementById(humid6).innerHTML = humid6Value + "%";
+		//wind
+		var wind6 = ("ID6mph11AM");
+		var wind6Value = Math.floor(data[6]['wind_speed']['value']);
+		
+		document.getElementById(wind6).innerHTML = wind6Value + "mph";
 		})
 }
 
 climacell();
+
+
+function hide() {
+
+	if ((document.getElementById("ID11_AM").innerHTML) == "12 AM") {
+		document.getElementById("ID11_AM").style.display = "none"
+	}
+
+}
+
+
+
+
+
 
 function test(){
 	fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,daily&appid=024402f357b3f2165dff5e013cebfd7b')
@@ -3667,17 +3907,64 @@ function currentdesc() {
     	if(TwentyFourHour < 12) {
        	mid = 'AM';
 		}
-	
+		if(TwentyFourHour = 24) {
+       	mid = 'AM';
+		}
 		const KELVIN = 273;
 
 		//current description
-		var currentdesc = ("PARTLY_CLOUDY"+hour+mid);
+		var currentdesc = ("PARTLY_CLOUDY5AM");
 		
 		var descnowValue = data['hourly'][0]['weather'][0]['description'];
-		
 		document.getElementById(currentdesc).innerHTML = descnowValue;
 	
 		console.log(descnowValue);
+		//+1 description
+		
+		var desc1 = ("PARTLY_CLOUDY6AM");
+		var desc1Value = data['hourly'][1]['weather'][0]['description'];
+		
+		document.getElementById(desc1).innerHTML = desc1Value;
+	
+		
+		//+2 description
+		var desc2 = ("PARTLY_CLOUDY7AM");
+		var desc2Value = data['hourly'][2]['weather'][0]['description'];
+		
+		document.getElementById(desc2).innerHTML = desc2Value;
+
+		//+3 description
+		
+		var desc3 = ("PARTLY_CLOUDY8AM");
+		var desc3Value = data['hourly'][3]['weather'][0]['description'];
+		
+		document.getElementById(desc3).innerHTML = desc3Value;
+
+		//+4 description
+		
+		var desc4 = ("PARTLY_CLOUDY9AM");
+		var desc4Value = data['hourly'][4]['weather'][0]['description'];
+		
+		document.getElementById(desc4).innerHTML = desc4Value;
+
+		//+5 description
+		
+		var desc5 = ("PARTLY_CLOUDY10AM");
+		var desc5Value = data['hourly'][5]['weather'][0]['description'];
+		
+		document.getElementById(desc5).innerHTML = desc5Value;
+
+		//+6 description
+		
+		var desc6 = ("PARTLY_CLOUDY11AM");
+		var desc6Value = data['hourly'][6]['weather'][0]['description'];
+		
+		document.getElementById(desc6).innerHTML = desc6Value;
+		
+
+		//5AM IS JUST A PLACEHOLDER HAVE 0 BE ALWAYS IN THE FIRST SLOT AND CURRENT HOUR BLAH BLAH WOULD INNER HTML TO 5AM AS THE PLACEHOLDER.
+
+		//MAKE + 3, +4,etc. UNTIL +19 (Max display)
 
 		})
 		test();
@@ -3706,116 +3993,14 @@ function hourmanage() {
     if(TwentyFourHour < 12) {
        mid = 'AM';
 	}     
-
+	if(TwentyFourHour = 24) {
+		mid = 'AM'
+	}
 	
 	var qnow = (hour + ' ' + mid)
 	//console.log(qnow)
 
-	//load to scroll
-
-	if (qnow = "5 AM") {
-		window.scrollTo(0,0)
-	}
 	
-
-	//seven
-	
-	if (qnow < "7 PM") {
-		blursevenpm();
-			function blursevenpm () {
-			document.getElementById("ID7_PM").style.filter = "opacity(50%)";
-		}
-	}
-	
-	//eight
-
-	if(qnow < "9 PM") {
-		blureightpm();
-			function blureightpm () {
-			document.getElementById("ID8_PM").style.filter = "opacity(50%)";
-		}
-	}
-	
-	//nine
-	
-	if(qnow < "10 PM") {
-		blurninepm();
-			function blurninepm () {
-			document.getElementById("ID9_PM").style.filter = "opacity(50%)";
-		}
-	}
-
-	//ten
-
-
-
-	currentdesc();
-
-
-	}
-}	
-
-
-function fiveam () {
-	window.scrollTo(0,0);
-}
-function sixam () {
-	window.scrollTo(0,0);
-}
-function sixam () {
-	window.scrollTo(0,0);
-}
-function sevenam () {
-	window.scrollTo(0,0);
-}
-function eightam () {
-	window.scrollTo(0,950);
-}
-function nineam () {
-	window.scrollTo(0,960);
-}
-function tenam () {
-	window.scrollTo(0,970);
-}
-function elevenam () {
-	window.scrollTo(0,980);
-}
-function twelvepm () {
-	window.scrollTo(0,990);
-}
-function onepm () {
-	window.scrollTo(0,1000);
-}
-function twopm () {
-	window.scrollTo(0,1110);
-}
-function threepm () {
-	window.scrollTo(0,1120);
-}
-function fourpm () {
-	window.scrollTo(0,1130);
-}
-function fivepm () {
-	window.scrollTo(0,1140);
-}
-function sixpm () {
-	window.scrollTo(0,1150);
-}
-function sevenpm () {
-	window.scrollTo(0,1160);
-}
-function eightpm () {
-	window.scrollTo(0,1170);
-}
-function ninepm () {
-	window.scrollTo(0,1180);
-}
-function tenpm () {
-	window.scrollTo(0,1190);
-}
-function elevenpm () {
-	window.scrollTo(0,1200);
-}
 
 ///////////////////////////////////////
 // INITIALIZATION
