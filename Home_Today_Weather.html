@@ -479,6 +479,10 @@
 		height: 130.576px;
 		left: 2.684px;
 		top: 0px;
+		animation-name: floating;
+    	animation-duration: 2.5s;
+    	animation-iteration-count: infinite;
+    	animation-timing-function: ease-in-out;
 	}
 	.Path_12 {
 		overflow: visible;
@@ -488,6 +492,15 @@
 		left: 0px;
 		top: 39.754px;
 		transform: matrix(1,0,0,1,0,0);
+	    animation-name: floating;
+    	animation-duration: 2.5s;
+    	animation-iteration-count: infinite;
+    	animation-timing-function: ease-in-out;	
+	}
+	@keyframes floating {
+    from { transform: translate(0,  0px); }
+    45%  { transform: translate(0, 10px); }
+    to   { transform: translate(0, -0px); }    
 	}
 	#Group_8 {
 		position: absolute;
