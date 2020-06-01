@@ -95,7 +95,7 @@
 		white-space: nowrap;
 		--web-animation: fadein 1s ease-out;
 		--web-action-type: page;
-		--web-action-target: Home_Today_Weather___1.html;
+		--web-action-target: Home_Today_Weather.html;
 		cursor: pointer;
 		text-align: center;
 		font-family: Continuo;
@@ -111,7 +111,7 @@
   }
 	#Home_Today_Weather {
 		position: absolute;
-		width: 1920px;
+		width: 2000px;
 		height: 1080px;
 		background: linear-gradient(180deg, rgba(212,221,221,1) 0%, rgba(138,186,189,1) 100%);
 		overflow: hidden;
@@ -122,8 +122,8 @@
 	}
 	#Home_Today_Weather___1 {
 		position: absolute;
-		width: 2000px;
-		height: 1080px;
+		width: 100%;
+		height: 100%;
 		background: linear-gradient(180deg, rgba(212,221,221,1) 0%, rgba(138,186,189,1) 100%);
 		overflow: hidden;
 		--web-view-name: Home/Today Weather – 1;
@@ -161,9 +161,10 @@
 	.Rectangle_12 {
 		position: absolute;
 		overflow: visible;
-		width: 878px;
+		width: (100% - 440px);
+		margin-left: 1420px;
 		height: 659px;
-		left: 1029px;
+		left: 0px;
 		top: 830px;
 	}
 	#Rectangle_10 {
@@ -417,9 +418,10 @@
 	.Line_1 {
 		overflow: visible;
 		position: absolute;
-		width: 1721px;
+		width: calc(100% - 140px);
+		margin-left: 80px;
 		height: 2px;
-		left: 75.5px;
+		left: 0px;
 		top: 234.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
@@ -460,9 +462,10 @@
 	.Rectangle_11 {
 		position: absolute;
 		overflow: visible;
-		width: 856px;
+		width: calc(100% - 440px);
+		margin-left: 1420px;
 		height: 717px;
-		left: 1010px;
+		left: 0px;
 		top: 317px;
 	}
 	#_Radar_ {
@@ -558,6 +561,21 @@
 		font-size: 40px;
 		color: rgba(122,136,135,1);
 		letter-spacing: 1px;
+	}
+	#currentLocation {
+		position: absolute;
+		left: 75px;
+		top: 497px;
+		overflow: visible;
+		width: 385px;
+		height: 62px;
+		text-align: left;
+		font-family: Europa;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(122,136,135,1);
+		letter-spacing: 1px;		
 	}
 	#iconfinder_Cloudy_Sunny_572939 {
 		position: absolute;
@@ -665,9 +683,10 @@
 	}
 	#Group_8 {
 		position: absolute;
-		width: 62px;
+		width: 100%;
+		margin-left: 2060px;
 		height: 62px;
-		left: 1712px;
+		left: 0px;
 		top: 92px;
 		overflow: visible;
 		cursor: pointer;
@@ -716,6 +735,123 @@
 		width: 856px;
 		height: 690px;
 	}	
+	#icon {
+		position: absolute;
+    left: 0px;
+    top: 557px;
+    overflow: visible;
+    width: 100%;
+    margin-left: 100px;
+    height: 62px;
+    text-align: left;
+    font-family: Europa, sans-serif;
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 40px;
+    color: rgba(122,136,135,1);
+    letter-spacing: 1px;
+    transform: matrix(1,0,0,1,0,0);
+    animation-name: floating;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+	
+	
+	@keyframes floating {
+    from { transform: translate(0,  0px); }
+    45%  { transform: translate(0, 10px); }
+    to   { transform: translate(0, -0px); }    
+	}
+	.button {
+  		
+  		border-radius: 10px;
+  		
+  		text-align: center;
+  		text-decoration: none;
+ 		 display: inline-block;
+  		
+  		font-size: 50px;
+  		cursor: pointer;
+  		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.8s;
+}
+	.button10:hover {
+	box-shadow: 0 5px 10px 0 rgb(126, 169, 165),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button10 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+    top: 80px;
+    width: 13%;
+    height: 88px;
+    margin-left: 1700px;
+	--web-action-type: page;
+	--web-action-target: Location.html;
+}
+.button11:hover {
+	box-shadow: 0 5px 10px 0 rgb(126, 169, 165),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button11 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	width: 13%;
+	height: 88px;
+	margin-left: 1316.66666667px;
+	--web-action-type: page;
+	--web-action-target: Weekly_Weather.html;
+}
+.button12:hover {
+	box-shadow: 0 5px 10px 0 rgb(126, 169, 165),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button12 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	width: 13%;
+	height: 88px;
+	margin-left: 933.333px;
+	--web-action-type: page;
+	--web-action-target: Hourly_Weather.html;
+}
+.button13:hover {
+	box-shadow: 0 5px 10px 0 rgb(130, 162, 170),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button13 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	width: 13%;
+	height: 88px;
+	margin-left: 550px;
+	--web-action-type: page;
+	--web-action-target: Daily_Weather.html;
+}
 </style>
 </head>
 <body onload="myfunction()">
@@ -755,12 +891,12 @@
 			 <rect rx="24" ry="24" width="210" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
 			 
 		   </svg></svg>
-		<svg class="Rectangle_7_fu">
+		<svg class="Rectangle_7_fu" onclick="application.goToTargetView(event)">
 			<linearGradient id="Rectangle_7_fu" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
 				<stop offset="0" stop-color="#aacfce" stop-opacity="1"></stop>
 				<stop offset="1" stop-color="#8cb3b1" stop-opacity="1"></stop>
 			</linearGradient>
-			<rect fill="url(#Rectangle_7_fu)" onclick="location.href='https://www.weather-clear.com/Home_Today_Weather.html';" id="Rectangle_7_fu" rx="24" ry="24" x="0" y="0" width="232" height="232">
+			<rect fill="url(#Rectangle_7_fu)" onclick="application.goToTargetView(event)" id="Rectangle_7_fu" rx="24" ry="24" x="0" y="0" width="232" height="232">
 			</rect>
 		</svg>
 		<img id="Image_1" src="Image_1.png" srcset="Image_1.png 1x, Image_1@2x.png 2x">
@@ -819,8 +955,8 @@
 		  </div>
 		</div>
 	//Temp, wind, humid, hope(precip-chance)	
-	<div class="final" onclick="location.href='https://www.weather-clear.com/Home_Today_Weather.html';">
-		<p class=what></p>
+	<div class="final" onclick="application.goToTargetView(event)">
+		<p class=what onclick="application.goToTargetView(event)"></p>
 	</div>
 	<div class="humidover">
 		<p class=humidnow></p>
@@ -835,18 +971,18 @@
 			<span>TODAY</span>
 		</div>
 		<div  onclick="location.href='https://www.weather-clear.com/Daily_Weather.html';" id="Daily">
-			<span>Daily</span>
+			<span></span>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="Hourly">
-			<span>Hourly</span>
+			<span></span>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="Weekly">
-			<span>Weekly</span>
+			<span></span>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="Location">
-			<span>Location</span>
+			<span></span>
 		</div>
-		<svg class="Line_1" viewBox="0 0 1721 2">
+		<svg class="Line_1" viewBox="0 0 1721 1">
 			<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_1" d="M 0 0 L 1721 0">
 			</path>
 		</svg>
@@ -864,7 +1000,7 @@
 			</rect>
 		</svg>
 		<div id="_Radar_">
-			<span>[Radar]</span>
+			<span></span>
 		</div>
 		<svg class="Line_2" viewBox="0 0 129 5">
 			<path fill="transparent" stroke="rgba(207,144,20,1)" stroke-width="5px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_2" d="M 0 0 L 129 0">
@@ -889,15 +1025,8 @@
 		<div id="July_29">
 			<span>July 29</span>
 		</div>
-		<div id="iconfinder_Cloudy_Sunny_572939">
-			<svg class="Ellipse_2">
-				<ellipse fill="rgba(245,188,77,1)" id="Ellipse_2" rx="65.28790283203125" ry="65.28790283203125" cx="65.28790283203125" cy="65.28790283203125">
-				</ellipse>
-			</svg>
-			<svg class="Path_12" viewBox="10.023 20.819 172.835 113.158">
-				<path fill="rgba(154,195,194,1)" id="Path_12" d="M 126.2344589233398 133.977294921875 C 155.4614410400391 134.0007476806641 179.8955688476563 111.7579650878906 182.6104278564453 82.65732574462891 C 185.3253173828125 53.55670166015625 165.4272003173828 27.17807006835938 136.7002410888672 21.79486465454102 C 107.9732818603516 16.4116382598877 79.87433624267578 33.79597854614258 71.8685302734375 61.90512847900391 C 57.86521530151367 52.29936599731445 39.28951263427734 52.71878051757813 25.73399925231934 62.94675445556641 C 12.1784839630127 73.17472839355469 6.677146911621094 90.92205810546875 12.07089233398438 107.0239562988281 C 17.46462631225586 123.1258316040039 32.54623031616211 133.9783782958984 49.52748870849609 133.977294921875 L 126.2344589233398 133.977294921875 Z">
-				</path>
-			</svg>
+		<div id="currentLocation">
+			<span>CityState</span>
 		</div>
 		<div id="iconfinder_Foggy_5729388">
 			<svg class="Path_16" viewBox="13.734 25.161 66.525 4">
@@ -949,9 +1078,19 @@
 				<iframe src="https://www.rainviewer.com/map.html?loc=38.9167,-79.519,6&amp;oFa=0&amp;oC=0&amp;oU=0&amp;oCS=1&amp;oF=0&amp;oAP=0&amp;rmt=4&amp;c=1&amp;o=83&amp;lm=0&amp;th=0&amp;sm=1&amp;sn=1" width="96%" frameborder="0" style="border:0;height: 73vh;" allowfullscreen=""></iframe>
 			</div>
 		</div>
+		<div id="icon">
+			<span></span>
+		</div>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button10">Location</button>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button11">Weekly</button>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button12">Hourly</button>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button13">Daily</button>
 	</div>
 	</body>
 <script id="applicationScript">
+
+document.getElementById("currentLocation").innerHTML = localStorage.getItem("city") + ", MN";
+
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
@@ -974,7 +1113,7 @@ function preciptest() {
 	}
 	var nexthour = "2020-" + n + "-"+ x
 
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => console.log(data))
 }
@@ -993,7 +1132,7 @@ function precip() {
 	var nexthour = "2020-" + n + "-"+ x
 	console.log(nexthour)
 	
-	fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/hourly?'+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&location_id=Shoreview&unit_system=us&start_time=now&end_time='+nexthour+'T09%3A00%3A00&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
@@ -1104,7 +1243,7 @@ function myfunction(){
 	desc.innerHTML = "Desc - "+descValue;
 	temp.innerHTML = tempValue + "°"
 	
-		
+	icon.innerHTML = "<img src= 'http://openweathermap.org/img/wn/"+data['weather'][0]['icon']+"@4x.png'></img>"
 	})	  
 	humidity();
 }
