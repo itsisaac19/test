@@ -24,8 +24,8 @@
 	}
 	#Daily_Weather___1 {
 		position: absolute;
-		width: 1920px;
-		height: 1080px;
+		width: 100%;
+		height: 100%;
 		background: linear-gradient(180deg, rgba(212,221,221,1) 0%, rgba(138,186,189,1) 100%);
 		overflow: hidden;
 		--web-view-name: Daily Weather – 1;
@@ -191,7 +191,7 @@
 	}
 	#Daily {
 		position: absolute;
-		left: 593px;
+		left: 633px;
 		top: 102px;
 		overflow: hidden;
 		width: 186px;
@@ -202,6 +202,7 @@
 		font-weight: normal;
 		font-size: 40px;
 		color: rgba(122,136,135,1);
+	}
 	}
 	#Hourly {
 		position: absolute;
@@ -260,9 +261,10 @@
 	.Line_1 {
 		overflow: visible;
 		position: absolute;
-		width: 1721px;
+		width: calc(100% - 140px);
+		margin-left: 80px;
 		height: 2px;
-		left: 75.5px;
+		left: 0px;
 		top: 234.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
@@ -271,7 +273,7 @@
 		position: absolute;
 		width: 113px;
 		height: 5px;
-		left: 629.5px;
+		left: 669.5px;
 		top: 151.5px;
 		transform: matrix(1,0,0,1,0,0);
 	}
@@ -807,9 +809,10 @@
 	}
 	#Group_8 {
 		position: absolute;
-		width: 62px;
+		width: 100%;
+		margin-left: 2060px;
 		height: 62px;
-		left: 1712px;
+		left: 0px;
 		top: 92px;
 		overflow: visible;
 		cursor: pointer;
@@ -1423,6 +1426,139 @@
 		left: 1033.45px;
 		top: 902.748px;
 	}
+	#icon {
+		position: absolute;
+		left: 968px;
+		top: 256px;
+		overflow: visible;
+		width: 185px;
+		height: 62px;
+		transform: matrix(1,0,0,1,0,0);
+	    animation-name: floating;
+    	animation-duration: 2.5s;
+    	animation-iteration-count: infinite;
+    	animation-timing-function: ease-in-out;	
+		--web-action-type: page;
+		--web-action-target: Daily_Weather.html;
+	}
+	#icon1 {
+		position: absolute;
+		left: 968px;
+		top: 843px;
+		overflow: visible;
+		width: 185px;
+		height: 62px;
+		transform: matrix(1,0,0,1,0,0);
+	    animation-name: floating;
+    	animation-duration: 2.5s;
+    	animation-iteration-count: infinite;
+    	animation-timing-function: ease-in-out;	
+	}
+	.button {
+  		
+  		border-radius: 10px;
+  		
+  		text-align: center;
+  		text-decoration: none;
+ 		 display: inline-block;
+  		
+  		font-size: 50px;
+  		cursor: pointer;
+  		-webkit-transition-duration: 0.4s; /* Safari */
+  		transition-duration: 0.8s;
+}
+	.button10:hover {
+	box-shadow: 0 5px 10px 0 rgb(126, 169, 165),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button10 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+    top: 80px;
+    width: 13%;
+    height: 88px;
+    margin-left: 1700px;
+	--web-action-type: page;
+	--web-action-target: Location.html;
+}
+.button11:hover {
+	box-shadow: 0 5px 10px 0 rgb(126, 169, 165),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button11 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	width: 13%;
+	height: 88px;
+	margin-left: 1316.66666667px;
+	--web-action-type: page;
+	--web-action-target: Weekly_Weather.html;
+}
+.button12:hover {
+	box-shadow: 0 5px 10px 0 rgb(126, 169, 165),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button12 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	width: 13%;
+	height: 88px;
+	margin-left: 933.333px;
+	--web-action-type: page;
+	--web-action-target: Hourly_Weather.html;
+}
+.button13:hover {
+	box-shadow: 0 5px 10px 0 rgb(130, 162, 170),0 10px 20px -25px rgba(0,0,0,0.19);
+  background-color:rgba(165, 203, 206,1);
+ 
+}
+.button13 {
+	background-color:rgb(205, 218, 218);
+	color:#848282;
+	font-family: Continuo;
+	font-size: 40px;
+	position: absolute;
+	left: 0px;
+	top: 80px;
+	width: 13%;
+	height: 88px;
+	margin-left: 250px;
+	--web-action-type: page;
+	--web-action-target: Home_Today_Weather.html;
+}
+#construction {
+		position: absolute;
+		left: 90px;
+		top: 536px;
+		overflow: visible;
+		width: 32px;
+		height: 51px;
+		text-align: left;
+		font-family: Europa, sans-serif;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 140px;
+		color: rgba(66,66,66,1);
+		letter-spacing: 3px;
+		opacity: 0.35;
+	}
 </style>
 <body onload="daily()">
 	<div id="Daily_Weather___1">
@@ -1467,21 +1603,21 @@
 			</svg>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="TODAY">
-			<span>TODAY</span>
+			<span></span>
 		</div>
 		<div id="Daily">
 			<span>Daily</span>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="Hourly">
-			<span>Hourly</span>
+			<span></span>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="Weekly">
-			<span>Weekly</span>
+			<span></span>
 		</div>
 		<div onclick="application.goToTargetView(event)" id="Location">
-			<span>Location</span>
+			<span></span>
 		</div>
-		<svg class="Line_1" viewBox="0 0 1721 2">
+		<svg class="Line_1" viewBox="0 0 1721 1">
 			<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_1" d="M 0 0 L 1721 0">
 			</path>
 		</svg>
@@ -1597,6 +1733,9 @@
 		<div id="ID30">
 			<span>30</span>
 		</div>
+		<div id="construction">
+			<span>COMING SOON</span>
+		</div>
 		<div onclick="application.showOverlay('Help',0,0, event)" id="Group_8">
 			<div id="_">
 				<span>?</span>
@@ -1614,16 +1753,6 @@
 			<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="3px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_7" d="M 0 0 L 0 779">
 			</path>
 		</svg>
-		<div onclick="application.goToTargetView(event)" id="iconfinder_Cloudy_Sunny_572939">
-			<svg class="Ellipse_2">
-				<ellipse fill="rgba(245,188,77,1)" id="Ellipse_2" rx="37.17640686035156" ry="37.17640686035156" cx="37.17640686035156" cy="37.17640686035156">
-				</ellipse>
-			</svg>
-			<svg class="Path_12" viewBox="10.023 20.819 98.416 64.435">
-				<path fill="rgba(171,206,205,1)" id="Path_12" d="M 76.19638061523438 85.25404357910156 C 92.83889007568359 85.26739501953125 106.7522277832031 72.60185241699219 108.2981338500977 56.03128814697266 C 109.8440551757813 39.46073913574219 98.51361846923828 24.44014930725098 82.15583801269531 21.37483024597168 C 65.79805755615234 18.30949974060059 49.79788589477539 28.20853614807129 45.23919677734375 44.21452331542969 C 37.2653923034668 38.74478149414063 26.68796920776367 38.98360824584961 18.96915054321289 44.80764770507813 C 11.25033473968506 50.63168334960938 8.117749214172363 60.73741912841797 11.1890697479248 69.90620422363281 C 14.26038360595703 79.07497406005859 22.84819030761719 85.25465393066406 32.51770401000977 85.25404357910156 L 76.19638061523438 85.25404357910156 Z">
-				</path>
-			</svg>
-		</div>
 		<div onclick="application.goToTargetView(event)" id="ID50_">
 			<span>50°</span>
 		</div>
@@ -1801,10 +1930,16 @@
 			<path fill="transparent" stroke="rgba(112,112,112,1)" stroke-width="2px" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="4" shape-rendering="auto" id="Line_9" d="M 0 38 L 15 0">
 			</path>
 		</svg>
-		<svg class="iconfinder_Sunny_5729378">
-			<ellipse fill="rgba(245,188,77,1)" id="iconfinder_Sunny_5729378" rx="42.947998046875" ry="42.947998046875" cx="42.947998046875" cy="42.947998046875">
-			</ellipse>
-		</svg>
+		<div onclick="application.goToTargetView(event)" id="icon">
+			<span>icon</span>
+		</div>
+		<div id="icon1">
+			<span>icon1</span>
+		</div>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button10">Location</button>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button11">Weekly</button>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button12">Hourly</button>
+		<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button13">Today</button>
 	</div>
 	</body>
 <script id="applicationScript">
@@ -1834,7 +1969,7 @@ function dayhighlow () {
 
 	console.log(next2days)
 
-	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat=45.08&lon=-93.118&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next2days+'T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	fetch('https://api.climacell.co/v3/weather/forecast/daily?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&location_id=Shoreview&unit_system=us&start_time=now&end_time='+next2days+'T21%3A30%3A00&fields=wind_speed%2Chumidity%2cprecipitation&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
 	.then(data => {
 
@@ -1863,7 +1998,7 @@ dayhighlow();
 
 function daily() {
 
-fetch('https://api.openweathermap.org/data/2.5/onecall?lat=45.0866332&lon=-93.1183977&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
+fetch('https://api.openweathermap.org/data/2.5/onecall?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&exclude=current,minutely,hourly&appid=024402f357b3f2165dff5e013cebfd7b')
 .then(response => response.json())
 .then(data => {
 
@@ -1888,6 +2023,10 @@ var desc2Value = data['daily'][1]['weather'][0]['description'];
 document.getElementById("SUNNY").innerHTML = desc2Value;
 document.getElementById("ID54_").innerHTML = tempmax2Value + "°";
 document.getElementById("ID43__fj").innerHTML = tempmin2Value + "°";	
+
+icon.innerHTML = "<img src= 'http://openweathermap.org/img/wn/"+data['daily'][0]['weather'][0]['icon']+"@4x.png'></img>"
+icon1.innerHTML = "<img src= 'http://openweathermap.org/img/wn/"+data['daily'][1]['weather'][0]['icon']+"@4x.png'></img>"
+
 }) 
 month1();
 }
@@ -1912,6 +2051,95 @@ function days() {
 
 	var x1 = d.getDate();
 	var x2 = (d.getDate()+1);
+
+	var overflow2 = "no"
+
+	if (x2 > 31) {
+		if (n=="January") {
+			console.log("ALERT OVERFLOWING FROM JANUARY TO FEBRUARY");
+			overflow2 = "yes";
+			x2 = (x2 - 31);
+		}
+	}
+
+	// LEAP YEAR WUT BELOW
+	if (x2 > 28) {
+		if (n=="February") {
+			console.log("ALERT OVERFLOWING FROM FEBRUARY TO MARCH");
+			overflow2 = "yes";
+			x2  = (x2  - 28);
+		}
+	} 
+	if (x2  > 31) {
+		if (n=="March") {
+			console.log("ALERT OVERFLOWING FROM MARCH TO APRIL");
+			overflow2 = "yes";
+			x2  = (x2  - 31);
+		}
+	} 
+	if (x2  > 30) {
+		if (n=="April") {
+			console.log("ALERT OVERFLOWING FROM APRIL TO MAY");
+			overflow2 = "yes";
+			x2  = (x2  - 30);
+		}
+	} 
+	if (x2  > 31) {
+		if (n=="May") {
+			console.log("ALERT OVERFLOWING FROM MAY TO JUNE");
+			overflow2 = "yes";
+			x2  = (x2  - 31);
+		}
+	} 
+	if (x2  > 30) {
+		if (n=="June") {
+			console.log("ALERT OVERFLOWING FROM JUNE TO JULY");
+			overflow2 = "yes";
+			x2  = (x2  - 30);
+		}
+	} 
+	if (x2  > 31) {
+		if (n=="July") {
+			console.log("ALERT OVERFLOWING FROM JULY TO AUGUST");
+			overflow2 = "yes";
+			x2  = (x2  - 31);
+		}
+	} 
+	if (x2  > 31) {
+		if (n=="August") {
+			console.log("ALERT OVERFLOWING FROM AUGUST TO SEPTEMBER");
+			overflow2 = "yes";
+			x2  = (x2  - 31);
+		}
+	} 
+	if (x2  > 30) {
+		if (n=="September") {
+			console.log("ALERT OVERFLOWING FROM SEPTEMBER TO OCTOBER");
+			overflow2 = "yes";
+			x2  = (x2  - 30);
+		}
+	} 
+	if (x2  > 31) {
+		if (n=="October") {
+			console.log("ALERT OVERFLOWING FROM OCTOBER TO NOVEMBER");
+			overflow2 = "yes";
+			x2  = (x2  - 31);
+		}
+	} 
+	if (x2  > 30) {
+		if (n=="November") {
+			console.log("ALERT OVERFLOWING FROM NOVEMBER TO DECEMBER");
+			overflow2 = "yes";
+			x2  = (x2  - 30);
+		}
+	} 
+	if (x2  > 31) {
+		if (n=="December") {
+			console.log("ALERT OVERFLOWING FROM DECEMBER TO JANUARY");
+			overflow2 = "yes";
+			x2  = (x2  - 31);
+		}     
+	}
 
 	document.getElementById("JULY_29").innerHTML = n + " "+ x1;
 	document.getElementById("JULY_30").innerHTML = n + " "+ x2;
