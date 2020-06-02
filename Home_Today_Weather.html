@@ -114,7 +114,7 @@
 	.Rectangle_12 {
 		position: absolute;
 		overflow: visible;
-		width: (100% - 440px);
+		width: calc(100% - 440px);
 		margin-left: 1420px;
 		height: 659px;
 		left: 0px;
@@ -131,6 +131,9 @@
 		left: 64px;
 		top: 0px;
 		margin-top: 76.4vh;
+	}
+	.nice {
+		margin-top: 60vh;
 	}
 	.Rectangle_9 {
 		position: absolute;
@@ -749,35 +752,38 @@
 	</div>  
 	<div class="zoom"></div>
 	<div id="txt"></div>
+
+
+
 	<svg class="Rectangle_12" style="opacity: 0.21;">
- 	  <svg height="230" width="830">
-            <defs>
-             <filter id="f1" x="0" y="0">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="6"></feGaussianBlur>
-             </filter>
-            </defs>
-            <rect rx="40" ry="40" width="830" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
-  
-</svg></svg>
-	<svg class="Rectangle_10" style="opacity: 0.21;">
- 	  <svg height="230" width="250">
-            <defs>
-             <filter id="f1" x="0" y="0">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="6"></feGaussianBlur>
-             </filter>
-            </defs>
-            <rect rx="30" ry="30" width="247" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
-</svg></svg>
-
-
-	<svg class="Rectangle_9">
-		<rect fill="rgba(154,195,194,1)" onclick="application.goToTargetView(event)" id="Rectangle_9" rx="46" ry="46" x="0" y="0" width="283" height="284">
-		</rect>
-	</svg>
+		<svg height="230" width="830">
+			 <defs>
+			  <filter id="f1" x="0" y="0">
+			   <feGaussianBlur in="SourceGraphic" stdDeviation="6"></feGaussianBlur>
+			  </filter>
+			 </defs>
+			 <rect rx="40" ry="40" width="830" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+   
+ </svg></svg>
 	
 
 
 <div class="nice">
+
+
+	 <svg class="Rectangle_10" style="opacity: 0.21;">
+		<svg height="230" width="250">
+			 <defs>
+			  <filter id="f1" x="0" y="0">
+			   <feGaussianBlur in="SourceGraphic" stdDeviation="6"></feGaussianBlur>
+			  </filter>
+			 </defs>
+			 <rect rx="30" ry="30" width="247" height="210" stroke="black" stroke-width="3" fill="black" filter="url(#f1)"></rect>
+ </svg></svg>
+ <svg class="Rectangle_9">
+	<rect fill="rgba(154,195,194,1)" onclick="application.goToTargetView(event)" id="Rectangle_9" rx="46" ry="46" x="0" y="0" width="283" height="284">
+	</rect>
+</svg>
 	<svg class="Rectangle_7_wh" onclick="application.goToTargetView(event)">
 		<linearGradient id="Rectangle_7_wh" spreadMethod="pad" x1="0.5" x2="0.5" y1="0" y2="1">
 			<stop offset="0" stop-color="#aacfce" stop-opacity="1"></stop>
@@ -786,6 +792,7 @@
 		<rect fill="url(#Rectangle_7_wh)" onclick="application.goToTargetView(event)" id="Rectangle_7_wh" rx="24" ry="24" x="0" y="0" width="232" height="232">
 		</rect>
 	</svg>
+
 	<div class="final" onclick="application.goToTargetView(event)">
 		<p class=what onclick="application.goToTargetView(event)"></p>
 	</div>
