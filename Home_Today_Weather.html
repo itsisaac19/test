@@ -964,13 +964,7 @@
 	if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
 	
 	
-//from HERE to ...
 
-if (document.getElementById("currentLocation").innerHTML == "null, MN") {
-	localStorage.setItem("city", "none")
-	localStorage.setItem("lat", "45")
-	localStorage.setItem("lon", "-93")
-}
 document.getElementById("currentLocation").innerHTML = localStorage.getItem("city") + ", MN";
 
 function willthiswork() {
@@ -1070,9 +1064,16 @@ function myfunction(){
 	temp.innerHTML = tempValue + "°";
 	
 	icon.innerHTML = "<img src= 'http://openweathermap.org/img/wn/"+data['weather'][0]['icon']+"@4x.png'></img>"
-
+		
 	})	  
-	if	(localStorage.getItem("city") == "none") {
+	var what12 = localStorage.getItem("city")
+	if (what12 === null) {
+		document.getElementById("tutorial").style.display = "block"
+		document.getElementById("rectanglecover").style.display = "block"
+		document.getElementById("tutorial").innerHTML = "Hey There! The first thing you'll need to do is choose a location. Click on the Location tab above."
+	}
+
+	if	(localStorage.getItem("tutorial") == "yes") {
 		console.log(localStorage.getItem("city"))
 		document.getElementById("tutorial").style.display = "block"
 		document.getElementById("rectanglecover").style.display = "block"
