@@ -78,6 +78,11 @@
 		--web-action-type: page;
 		--web-action-target: Icon_Menus___1.html;
 	}
+	#page {
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: Home_Today_Weather.html;
+	}
 	.Ellipse_1 {
 		position: absolute;
 		overflow: visible;
@@ -299,7 +304,7 @@
  
 }
 </style>
-<body>
+<body onload="what()">
 	<div id="Find_your_city">	
 		<img id="Image_1" src="Image_1.png" srcset="Image_1.png 1x, Image_1@2x.png 2x">
 		<img id="Weather_Clear" src="Weather_Clear.png" srcset="Weather_Clear.png 1x, Weather_Clear@2x.png 2x">
@@ -351,7 +356,7 @@
 
 
 		<div id="page">
-			<button onclick="location.href='https://twitter.com/WeatherCLear2';" id="confirmcity" class="button button2">Let's go!</button>
+			<button onclick="application.goToTargetView(event)" id="confirmcity" class="button button2">Let's go!</button>
 		</div>
 		<div id="_ONLY_SHORVIEW_AS_OF_4_15_2020">
 			<span></span>
@@ -363,8 +368,19 @@
 ///////////////////////////////////////
 // INITIALIZATION
 ///////////////////////////////////////
+localStorage.setItem("tutorial", "yes")
+var what1 = localStorage.getItem("lon")
 
+console.log(localStorage.getItem("lat"))
 
+function what() {
+	if (what1 === null) {
+	localStorage.setItem("lat", "45");
+	localStorage.setItem("lon", "-93");
+	localStorage.setItem("city", "Shoreview")
+	localStorage.setItem("tutorial", "yes")
+}
+}
 //https://www.weather-clear.com/Home_Today_Weather.html
 
 //onclick="application.showOverlay('Icon_Menus___1',0,0, event)"
