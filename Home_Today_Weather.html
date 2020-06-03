@@ -968,6 +968,7 @@
 
 if (document.getElementById("currentLocation").innerHTML == "null, MN") {
 	localStorage.setItem("city", "none")
+	alert("no city")
 }
 document.getElementById("currentLocation").innerHTML = localStorage.getItem("city") + ", MN";
 
