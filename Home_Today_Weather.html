@@ -7,7 +7,7 @@
 <title>Home/Today Weather</title>
 <style id="applicationStylesheet" type="text/css">
 	@import url("https://use.typekit.net/rbp6ieb.css");
-        @import url("https://use.typekit.net/rbp6ieb.css");
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 	.mediaViewInfo {
 		--web-view-name: Home/Today Weather;
 		--web-view-id: Home_Today_Weather;
@@ -741,6 +741,27 @@
 	--web-action-type: page;
 	--web-action-target: Daily_Weather.html;
 }
+.button69:hover {
+	box-shadow:0 3px 7px 0 rgba(0,0,0,0.25);
+  background-color:rgb(238, 235, 235);
+ 
+}
+.button69 {
+	transition-duration: 0.001s;
+	box-shadow:0 3px 7px 0 rgba(0,0,0,0.25);
+	color:#76bdd3;
+	background-color:rgb(255, 255, 255);
+	font-family: Roboto, sans-serif;
+	font-size: 30px;
+	position: absolute;
+	left: 0px;
+	top: 952px;
+	width: 10%;
+	height: 80px;
+	margin-left: 1150px;
+	--web-action-type: page;
+	--web-action-target: Feedback.html;
+}
 </style>
 <body onload="myfunction()">
 
@@ -948,6 +969,9 @@
 		<div id="text2">Loading...</div>
 	</div>
 	
+	<button  onclick="application.goToTargetView(event)" id="feedback" class="button button69">Feedback</button>
+
+
 </div>
 </body>
 <script id="applicationScript">
