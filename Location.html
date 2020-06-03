@@ -942,6 +942,13 @@ function cityselect () {
 	document.getElementById("currentLocation").innerHTML = "Current Location: " + localStorage.getItem("city")
 
 	console.log(localStorage.getItem("lat"))
+	
+	if	(localStorage.getItem("tutorial") == "yes") {
+
+		alert("After you click ok on this alert, you'll see that even when you pick a location manually, the coordinates will show for that specific city. That's about it, have fun exploring Weather Clear. If you have any questions, click the question mark in the top right corner.")
+		localStorage.setItem("tutorial", "no")
+		console.log(localStorage.getItem("tutorial"))
+	}
 }
 
 function manage () {
@@ -960,12 +967,7 @@ function manage () {
 
 function hide () {
 
-	if (localStorage.getItem("city") == "") {
 
-		localStorage.setItem("tutorial", "yes")
-	} else {
-		localStorage.setItem("tutorial", "no")
-	}
 
 	document.getElementById("cities").value = localStorage.getItem("city")
 	document.getElementById("MANAGE").style.display = "none"
@@ -973,8 +975,8 @@ function hide () {
 
 	if	(localStorage.getItem("tutorial") == "yes") {
 
-		alert("To pick a location, click on the little arrow. Or, click on Quick Find to automatically get your coordinates.")
-
+		alert("To pick a location, click on the little arrow next to the dropdown. Or, click on Quick Find to automatically get your coordinates.")
+		localStorage.setItem("tutorial", "yes")
 	}
 }
 ///////////////////////////////////////
