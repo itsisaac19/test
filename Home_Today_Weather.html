@@ -968,7 +968,8 @@
 
 if (document.getElementById("currentLocation").innerHTML == "null, MN") {
 	localStorage.setItem("city", "none")
-	alert("no city")
+	localStorage.setItem("lat", "45")
+	localStorage.setItem("lon", "-93")
 }
 document.getElementById("currentLocation").innerHTML = localStorage.getItem("city") + ", MN";
 
