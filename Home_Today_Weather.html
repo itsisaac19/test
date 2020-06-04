@@ -130,7 +130,7 @@
 		height: 323px;
 		left: 64px;
 		top: 0px;
-		margin-top: 110.4vh;
+		margin-top: 76.4vh;
 	}
 	.nice {
 		margin-top: 60vh;
@@ -142,7 +142,7 @@
 		height: 284px;
 		left: 47px;
 		top: 0px;
-		margin-top: 95.2vh;
+		margin-top: 69.2vh;
 		--web-animation: fadein 1s ease-out;
 		--web-action-type: page;
 		--web-action-target: Home_Today_Weather___1.html;
@@ -157,7 +157,7 @@
 		width: 270px;
 		height: 270px;
 		left: 87px;
-		margin-top: 93.8vh;
+		margin-top: 73.8vh;
 		top: 0px;
 	}
 	.Rectangle_7_wh {
@@ -166,7 +166,7 @@
 		display: block;
 		width: 232px;
 		height: 232px;
-		margin-top: 100.4vh;
+		margin-top: 71.4vh;
 		left: 75px;
 		top: 0px;
 		transition: 0.5s ease-out;
@@ -524,7 +524,7 @@
 	.Rectangle_11 {
 		position: absolute;
 		overflow: visible;
-		width: 150vh;
+		width: 80vh;
 		margin-left: 61%;
 		height: 717px;
 		left: 0px;
@@ -644,8 +644,8 @@
 		overflow: hidden;
 		top: 14px;
 		right: 17px;
-		width: 120vh;
-		height: 740px;
+		width: 80vh;
+		height: 690px;
 	}	
 	#linered {
 		position: relative;
@@ -763,7 +763,7 @@
 	--web-action-target: Feedback.html;
 }
 </style>
-<body onload="zoom()">
+<body onload="myfunction()">
 
 <div id="Home_Today_Weather">
 	<div id="linered">
@@ -920,7 +920,7 @@
 		<span>CityState</span>
 	</div>
 	<svg class="Rectangle_11">
-		<rect fill="rgba(161,198,197,1)" id="Rectangle_11" rx="10" ry="10" x="0" y="0" width="120vh" height="717">
+		<rect fill="rgba(161,198,197,1)" id="Rectangle_11" rx="10" ry="10" x="0" y="0" width="80vh" height="717">
 		</rect>
 	</svg>
 	<div id="_Radar_">
@@ -956,7 +956,7 @@
 	</div>
 	<div class = "Rectangle_11">
 		<div class="map" style="text-align: right;">
-			<iframe src="https://www.rainviewer.com/map.html?loc=38.9167,-79.519,6&amp;oFa=0&amp;oC=0&amp;oU=0&amp;oCS=1&amp;oF=0&amp;oAP=0&amp;rmt=4&amp;c=1&amp;o=83&amp;lm=0&amp;th=0&amp;sm=1&amp;sn=1" width="96%" frameborder="0" style="border:0; height: 95vh;" allowfullscreen=""></iframe>
+			<iframe src="https://www.rainviewer.com/map.html?loc=38.9167,-79.519,6&amp;oFa=0&amp;oC=0&amp;oU=0&amp;oCS=1&amp;oF=0&amp;oAP=0&amp;rmt=4&amp;c=1&amp;o=83&amp;lm=0&amp;th=0&amp;sm=1&amp;sn=1" width="96%" frameborder="0" style="border:0; height: 73vh;" allowfullscreen=""></iframe>
 		</div>
 	</div>
 	<button  onclick="application.goToTargetView(event)" id="Weekfinal" class="button button10">Location</button>
@@ -976,10 +976,7 @@
 </body>
 <script id="applicationScript">
 	
-	function zoom() {
-            document.body.style.zoom = "67%";
-			myfunction();
-    }
+
 
 	///////////////////////////////////////
 	// INITIALIZATION
