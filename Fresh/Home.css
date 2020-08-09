@@ -8,6 +8,15 @@
 	background-repeat: no-repeat;
 	background-image: url("../panjinda-iIqiI5fyZKs-unsplash.jpg")
 }
+#radarmain {
+	position: absolute;
+	display: none;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	width: 40vw;
+	height: 60vh;
+}
 #containertopleft {
 	position: relative;
 	height: 250px;
@@ -31,18 +40,20 @@
 }
 #icon {
 	position: absolute;
-	top: 10px;
-	left: 10px;
+	top: 50px;
+	left: 0px;
+	width: 100px;
+	height: 100px;
 }
 #desc {
 	position: absolute;
-	top: 80px;
+	top: 120px;
 	left: 10px;
 	font-size: 30px;
 }
 #tempnow {
 	position: absolute;
-	top: 150px;
+	top: 220px;
 	left: 10px;
 	font-size: 50px;
 	font-weight: 700;
@@ -50,16 +61,16 @@
 }
 #location {
 	position:absolute;
-	bottom: -55px;
-	left: 10px;
+	bottom: 15px;
+	right: 20px;
 	width: 150px;
 	height: 70px;
 	border: none;
 	border-radius: none;
-	background-color: rgba(0,0,0, 0.30);
-	box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.9);
+	background-color: rgb(255, 255, 255, 0.0001);
 	color: white;
 	font-family: 'Barlow', sans-serif;
+	font-weight: 200;
 	font-size: 20px;
 }
 #location:hover {
@@ -69,12 +80,12 @@
 #containertopright {
 	position: absolute;
 	height: 475px;
-	width: 30vw;
+	width: 25vw;
 	top: 0px;
 	right: 0px;
  	margin-top: 100px;
-	margin-right: 60px;
-	border: rgba(245,108,110,0.501);
+	margin-right: 0px;
+	border: rgba(128, 28, 30, 0.001);
 	border-style: solid;
 	font-family: 'Barlow', sans-serif;
 	color: white;
@@ -86,7 +97,24 @@
 	left: 0px;
 	width: 100%;
 	height: 100px;
-	background-color: gray;
+	background-color: none;
+}
+#h1 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 300;
+}
+#stat1 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 700;
 }
 #Widget2 {
 	position: relative;
@@ -94,7 +122,24 @@
 	left: 0px;
 	width: 100%;
 	height: 100px;
-	background-color: gray;
+	background-color: none;
+}
+#h2 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 300;
+}
+#stat2 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 700;
 }
 #Widget3 {
 	position: relative;
@@ -102,7 +147,24 @@
 	left: 0px;
 	width: 100%;
 	height: 100px;
-	background-color: gray;
+	background-color: none;
+}
+#h3 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 300;
+}
+#stat3 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 700;
 }
 #Widget4 {
 	position: relative;
@@ -110,8 +172,38 @@
 	left: 0px;
 	width: 100%;
 	height: 100px;
-	background-color: gray;
+	background-color: none;
 }
-#miss {
-	
+#h4 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 20px;
+	font-family: 'Barlow', sans-serif;
+	font-weight: 300;
 }
+#stat4 {
+	position: absolute;
+	top: 20px;
+	left: 3.9vw;
+	color: #ffffff;
+	font-size: 30px;
+	font-weight: 700;
+}
+#iconlocation {
+	position: absolute;
+	top: 30px;
+	right: 3vw;
+	width: 35px;
+	height: 35px;
+}
+.clock {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #ffffff;
+    font-size: 30px;
+    font-family: 'Barlow', sans-serif;
+    letter-spacing: 7px;

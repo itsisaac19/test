@@ -16,16 +16,20 @@
 	
 	
 	
-<body onload="hide()">
+<body onload="clock()">
 	
 	<img id="Misty"/>
 	
+	<div id="radarmain">
+		<iframe src="https://www.rainviewer.com/map.html?loc=42.8232,-80.5463,7&oFa=1&oC=0&oU=0&oCS=1&oF=0&oAP=0&rmt=4&c=1&o=71&lm=0&th=0&sm=1&sn=1" width="100%" frameborder="0" style="border:0;height:50vh;" allowfullscreen></iframe>
+	</div>
+
 	<div id="containertopleft">
-		<img id="hamburger" src="hamburger-menu.png" />
-		<img id="icon"/>
+		<img id="hamburger" src="slimhammen.png" />
+		<img id="icon" src="color/clear_day.svg"/>
 		<p id="desc">Clear</p>
 		<div id="tempnow">60° F</div>
-		<button id="location" type="button">Shoreview</button>
+		<button id="location" onclick="getLocation()" type="button">Shoreview</button>
 	</div>
 	
 	
@@ -33,27 +37,29 @@
 	<div id="containertopright">
 		<div id="Widget1">
 			<img id="icon1"/>
-			<div id="h1"></div>
-			<p id="stat1"></p>
+			<div id="h1">Humidity</div>
+			<p id="stat1">__</p>
 		</div>
 		<div id="Widget2">
 			<img id="icon2"/>
-			<div id="h2"></div>
-			<p id="stat2"></p>
+			<div id="h2">Chance of Rain</div>
+			<p id="stat2">__</p>
 		</div>
 		<div id="Widget3">
 			<img id="icon3"/>
-			<div id="h3"></div>
-			<p id="stat3"></p>
+			<div id="h3">Wind Speed</div>
+			<p id="stat3">__</p>
 		</div>
 		<div id="Widget4">
 			<img id="icon4"/>
-			<div id="h4"></div>
-			<p id="stat4"></p>
+			<div id="h4">Air Pressure</div>
+			<p id="stat4">__</p>
 		</div>
 	</div>
 
-	<a hi></a>
+	<img id="iconlocation" src="location.png" />
+
+	<div id="MyClockDisplay" class="clock" onload="clock()"></div>
 </body>
 <script src="Fresh/Home.js"></script>
 </html>
