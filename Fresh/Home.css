@@ -1,3 +1,47 @@
+@keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-moz-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-webkit-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-o-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+	}
+  }
+  
+  @-ms-keyframes fadeIn {
+	0% {
+	  opacity:0;
+	}
+	100% {
+	  opacity:1;
+  }
+  }
 #Misty {
 	position: absolute;
 	top: 0;
@@ -10,12 +54,16 @@
 }
 #radarmain {
 	position: absolute;
-	display: none;
+	display: block;
 	top: 50%;
 	left: 50%;
 	transform: translateX(-50%) translateY(-50%);
 	width: 40vw;
 	height: 60vh;
+	border: black;
+	background-color: rgb(255, 255, 255);
+	padding: 10px;
+
 }
 #containertopleft {
 	position: relative;
@@ -30,9 +78,9 @@
 }
 #hamburger {
 	position: absolute;
-	top: 0px;
-	left: 10px;
-	width: 35px;
+	top: 37px;
+	left: 40vw;
+	width: 30px;
 	height: 30px;
 }
 #hamburger:hover {
@@ -40,7 +88,7 @@
 }
 #icon {
 	position: absolute;
-	top: 50px;
+	top: 40px;
 	left: 0px;
 	width: 100px;
 	height: 100px;
@@ -73,9 +121,141 @@
 	font-weight: 200;
 	font-size: 20px;
 }
-#location:hover {
-	cursor: pointer
-		
+#settingspreview {
+	position: absolute;
+	display: none;
+	top: 30px;
+	left: 40vw;
+	height: 150px;
+	width: 120px;
+	background-color: rgb(248, 248, 248);
+	border-radius: 3px;
+	padding: 10px;
+	font-family: 'Barlow', sans-serif;
+	animation: fadeIn ease 0.6s;
+	-webkit-animation: fadeIn ease 0.6s;
+	-moz-animation: fadeIn ease 0.6s;
+	-o-animation: fadeIn ease 0.6s;
+	-ms-animation: fadeIn ease 0.6s;
+}
+#close {
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+#settingspreview p {
+	text-align: center;
+}
+#Preferences {
+	transition: ease-in 0.13s;
+}
+#Preferences:hover {
+	color: rgb(199, 231, 247);
+	cursor: pointer;
+
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	left: 50%;
+	margin-left: -30px;
+  }
+  
+  .switch input { 
+		display: none;
+  }
+  
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+  }
+  .slider:after
+{
+ content:'OFF';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ top: 50%;
+ left: 50%;
+ font-size: 10px;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'ON';
+}
+  /* Rounded sliders */
+  .slider.round {
+	border-radius: 34px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+#innertest1 {
+	display: none;
+}  
+#Customize {
+	transition: ease-in 0.13s;
+}
+#Customize:hover {
+	color: rgb(199, 231, 247);
+	cursor: pointer;
+}
+#Feedback {
+	transition: ease-in 0.13s;
+}
+#Feedback:hover {
+	color: rgb(199, 231, 247);
+	cursor: pointer;
+}
+#coordinatesform {
+	position: absolute;
+	background-color: white;
+	left: 50%;
+	border-radius: 4px;
+	transform: translateX(-50%) translateY(-50%);
+	display: none;
+	font-family: 'Barlow', sans-serif;
+	padding: 25px;
 }
 #containertopright {
 	position: absolute;
@@ -193,12 +373,15 @@
 }
 #iconlocation {
 	position: absolute;
-	top: 30px;
-	right: 3vw;
-	width: 35px;
-	height: 35px;
+	top: 37px;
+	right: 40vw;
+	width: 27px;
+	height: 27px;
 }
-.clock {
+#iconlocation:hover {
+	cursor: pointer		
+}
+#clock {
     position: absolute;
     top: 50px;
     left: 50%;
@@ -206,4 +389,5 @@
     color: #ffffff;
     font-size: 30px;
     font-family: 'Barlow', sans-serif;
-    letter-spacing: 7px;
+	letter-spacing: 7px;
+}

@@ -16,24 +16,50 @@
 	
 	
 	
-<body onload="clock()">
+<body onload="updateClock()">
 	
 	<img id="Misty"/>
 	
-	<div id="radarmain">
-		<iframe src="https://www.rainviewer.com/map.html?loc=42.8232,-80.5463,7&oFa=1&oC=0&oU=0&oCS=1&oF=0&oAP=0&rmt=4&c=1&o=71&lm=0&th=0&sm=1&sn=1" width="100%" frameborder="0" style="border:0;height:50vh;" allowfullscreen></iframe>
-	</div>
+	<iframe id="radarmain" src="https://www.rainviewer.com/map.html?loc=47.8459,-91.5656,7&oFa=1&oC=1&oU=0&oCS=0&oF=0&oAP=0&rmt=4&c=1&o=71&lm=0&th=0&sm=1&sn=1" width="100%" frameborder="0" style="border:0;height:50vh;" allowfullscreen></iframe>
+
 
 	<div id="containertopleft">
-		<img id="hamburger" src="slimhammen.png" />
 		<img id="icon" src="color/clear_day.svg"/>
 		<p id="desc">Clear</p>
 		<div id="tempnow">60° F</div>
 		<button id="location" onclick="getLocation()" type="button">Shoreview</button>
 	</div>
 	
-	
-	
+	<img id="hamburger" src="hamboy2.png" />
+
+	<div id="settingspreview">
+		<img id="close" src="closee.png"/>
+		<p id="Preferences">Preferences</p>
+
+		<p id="darkTheme">Dark Theme</p>
+
+		<label id="switch11" class="switch">
+			<input id="check19" type="checkbox">
+			<span class="slider round"></span>
+		</label>
+
+		<div id="innertest1"></div>
+
+		<p id="Units">Units</p>
+
+		<p id="Customize">Customize</p>
+		<p id="Feedback">Feedback</p>
+
+		
+	</div>
+
+	<div id="coordinatesform"
+		<label for="fname">Latitude</label>
+		<input type="text" id="fname" name="fname"><br><br>
+		<label for="lname">Longitude</label>
+		<input type="text" id="lname" name="lname"><br><br>
+		<input id="submit" type="submit" value="Submit">
+	</div>
 	<div id="containertopright">
 		<div id="Widget1">
 			<img id="icon1"/>
@@ -59,7 +85,8 @@
 
 	<img id="iconlocation" src="location.png" />
 
-	<div id="MyClockDisplay" class="clock" onload="clock()"></div>
+	<div id="clock" onload="updateClock()"></div>
+
 </body>
 <script src="Fresh/Home.js"></script>
 </html>
