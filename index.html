@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  
+	<link rel="icon" href="https://i.ibb.co/3fshXNb/71115273-1726182997514630-6335460461093322752-n.jpg">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;500;600;700&family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Nunito:wght@300;400&family=Open+Sans&family=Raleway&family=Roboto&display=swap" rel="stylesheet">
@@ -11,55 +11,25 @@
     <title>Fresh</title>
     <link rel="stylesheet" href="Fresh/Home.css">
     <style type="text/css">
-    </style>
+    </style>	
 </head>
 	
 	
 	
-<body onload="updateClock()">
+<body>
 	
 	<img id="Misty"/>
 	
-	<iframe id="radarmain" src="https://www.rainviewer.com/map.html?loc=47.8459,-91.5656,7&oFa=1&oC=1&oU=0&oCS=0&oF=0&oAP=0&rmt=4&c=1&o=71&lm=0&th=0&sm=1&sn=1" width="100%" frameborder="0" style="border:0;height:50vh;" allowfullscreen></iframe>
+	<!--<iframe id="radarmain" src="https://www.rainviewer.com/map.html?loc=47.8459,-91.5656,7&oFa=1&oC=1&oU=0&oCS=0&oF=0&oAP=0&rmt=4&c=1&o=71&lm=0&th=0&sm=1&sn=1" width="100%" frameborder="0" style="border:0;height:50vh;display: none;" allowfullscreen></iframe>-->
 
 
 	<div id="containertopleft">
-		<img id="icon" src="color/clear_day.svg"/>
-		<p id="desc">Clear</p>
-		<div id="tempnow">60° F</div>
-		<button id="location" onclick="getLocation()" type="button">Shoreview</button>
-	</div>
-	
-	<img id="hamburger" src="hamboy2.png" />
-
-	<div id="settingspreview">
-		<img id="close" src="closee.png"/>
-		<p id="Preferences">Preferences</p>
-
-		<p id="darkTheme">Dark Theme</p>
-
-		<label id="switch11" class="switch">
-			<input id="check19" type="checkbox">
-			<span class="slider round"></span>
-		</label>
-
-		<div id="innertest1"></div>
-
-		<p id="Units">Units</p>
-
-		<p id="Customize">Customize</p>
-		<p id="Feedback">Feedback</p>
-
-		
+			<img id="icon" src="color/clear_day.svg"/>
+			<p id="desc">Clear</p>
+			<div id="tempnow">60° F</div>
+			<p id="location" onclick="getLocation()" type="button">Shoreview</p>
 	</div>
 
-	<div id="coordinatesform"
-		<label for="fname">Latitude</label>
-		<input type="text" id="fname" name="fname"><br><br>
-		<label for="lname">Longitude</label>
-		<input type="text" id="lname" name="lname"><br><br>
-		<input id="submit" type="submit" value="Submit">
-	</div>
 	<div id="containertopright">
 		<div id="Widget1">
 			<img id="icon1"/>
@@ -83,9 +53,43 @@
 		</div>
 	</div>
 
-	<img id="iconlocation" src="location.png" />
+	<div id="containertop">
+		<div id="containertopHOLDER">
+		<img id="iconlocation" src="location.png" />
+		<img id="hamburger" src="hamboy2.png" />
 
-	<div id="clock" onload="updateClock()"></div>
+		<div id="settingspreview">
+			<img id="close" src="closee.png"/>
+
+			<p id="Preferences">Preferences</p>	
+			<p id="darkTheme">Dark Theme</p>
+	
+			<label id="switch11" onclick="themeToggle()" class="switch">
+				<input id="check19" type="checkbox">
+				<span class="slider round"></span>
+			</label>
+			<div id="innertest1"></div>
+	
+			<p id="Units">Units</p>
+
+			<label id="switch22" onclick="unitToggle()" class="switch">
+				<input id="check29" type="checkbox">
+				<span class="slider1 round"></span>
+				<p id="US">US</p>
+			</label>
+			<div id="innertest2" style="display: none;"></div>
+	
+			<p id="Customize">Customize</p>
+			<p id="Feedback">Feedback</p>
+	
+			
+		</div>
+
+		<div id="clock"></div>
+
+	</div>
+	</div>
+
 
 </body>
 <script src="Fresh/Home.js"></script>

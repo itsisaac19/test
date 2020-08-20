@@ -76,16 +76,6 @@
 	font-family: 'Barlow', sans-serif;
 	color: white;
 }
-#hamburger {
-	position: absolute;
-	top: 37px;
-	left: 40vw;
-	width: 30px;
-	height: 30px;
-}
-#hamburger:hover {
-	cursor: pointer;
-}
 #icon {
 	position: absolute;
 	top: 40px;
@@ -108,9 +98,9 @@
 		
 }
 #location {
-	position:absolute;
-	bottom: 15px;
-	right: 20px;
+	position: absolute;
+	top: 166px;
+	left: 10px;
 	width: 150px;
 	height: 70px;
 	border: none;
@@ -120,23 +110,6 @@
 	font-family: 'Barlow', sans-serif;
 	font-weight: 200;
 	font-size: 20px;
-}
-#settingspreview {
-	position: absolute;
-	display: none;
-	top: 30px;
-	left: 40vw;
-	height: 150px;
-	width: 120px;
-	background-color: rgb(248, 248, 248);
-	border-radius: 3px;
-	padding: 10px;
-	font-family: 'Barlow', sans-serif;
-	animation: fadeIn ease 0.6s;
-	-webkit-animation: fadeIn ease 0.6s;
-	-moz-animation: fadeIn ease 0.6s;
-	-o-animation: fadeIn ease 0.6s;
-	-ms-animation: fadeIn ease 0.6s;
 }
 #close {
 	width: 15px;
@@ -153,7 +126,16 @@
 	color: rgb(199, 231, 247);
 	cursor: pointer;
 
+
 }
+
+
+
+/*SWITCHES*/
+
+
+/*DARK THEME*/
+
 .switch {
 	position: relative;
 	display: inline-block;
@@ -161,12 +143,10 @@
 	height: 34px;
 	left: 50%;
 	margin-left: -30px;
-  }
-  
+  }  
   .switch input { 
 		display: none;
-  }
-  
+  }  
   .slider {
 	position: absolute;
 	cursor: pointer;
@@ -178,7 +158,6 @@
 	-webkit-transition: .4s;
 	transition: .4s;
   }
-  
   .slider:before {
 	position: absolute;
 	content: "";
@@ -190,36 +169,95 @@
 	-webkit-transition: .4s;
 	transition: .4s;
   }
-  
   input:checked + .slider {
 	background-color: #2196F3;
-  }
-  
+  }  
   input:focus + .slider {
 	box-shadow: 0 0 1px #2196F3;
-  }
-  
+  }  
   input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
 	-ms-transform: translateX(26px);
 	transform: translateX(26px);
   }
-  .slider:after
-{
- content:'OFF';
- color: white;
+  .slider:after{
+   content:'';
+   color: rgb(150, 150, 150);
+   display: block;
+   position: absolute;
+   transform: translate(-50%,-50%);
+   top: 50%;
+   left: 73%;
+   font-size: 10px;
+   z-index: 100;
+   font-family: 'Barlow', sans-serif;
+  }
+  input:checked + .slider:after{  
+  content:'ON';
+  }
+
+
+
+  /*UNITS*/
+
+#switch22 p {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	margin-top: -6px;
+	left: 18%;
+	font-family: 'Barlow', sans-serif;
+	font-size: 10px;
+	color: #2196F3;
+}
+  .slider1 {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }  
+  .slider1:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  input:checked + .slider1{
+	background-color: #cfcfcf;
+  }  
+  input:focus + .slider1 {
+	box-shadow: 0 0 1px #2196F3;
+  }  
+  input:checked + .slider1:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+  }
+.slider1:after{
+ content:'';
+ color: #2196F3;
  display: block;
  position: absolute;
  transform: translate(-50%,-50%);
  top: 50%;
- left: 50%;
+ left: 73%;
  font-size: 10px;
- font-family: Verdana, sans-serif;
+ z-index: 100;
+ font-family: 'Barlow', sans-serif;
 }
-
-input:checked + .slider:after
+input:checked + .slider1:after
 {  
-  content:'ON';
+  content:'SI';
 }
   /* Rounded sliders */
   .slider.round {
@@ -229,6 +267,17 @@ input:checked + .slider:after
   .slider.round:before {
 	border-radius: 50%;
   }
+  .slider1.round {
+	border-radius: 34px;
+  }
+  
+  .slider1.round:before {
+	border-radius: 50%;
+  }
+
+
+  /* END OF SWITCHES */
+
 
 #innertest1 {
 	display: none;
@@ -283,7 +332,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 20px;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
@@ -292,7 +340,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 30px;
 	font-weight: 700;
 }
@@ -308,7 +355,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 20px;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
@@ -317,7 +363,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 30px;
 	font-weight: 700;
 }
@@ -333,7 +378,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 20px;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
@@ -342,7 +386,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 30px;
 	font-weight: 700;
 }
@@ -358,7 +401,6 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 20px;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
@@ -367,19 +409,66 @@ input:checked + .slider:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	color: #ffffff;
 	font-size: 30px;
 	font-weight: 700;
+}
+#containertop {
+	position: absolute;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, 0.001);
+	top: 0px;
+	left: 50%;
+	margin-left: -275px;
+	width: 550px;
+	height: 100px;
+}
+#containertopHOLDER {
+	position: relative;
+	border-style: solid;
+	border-color: rgba(253, 58, 58, 0.001);
+	top: 0px;
+	left: 0px;
+	margin-left: 0px;
+	width: 550px;
+	height: 100px;
 }
 #iconlocation {
 	position: absolute;
 	top: 37px;
-	right: 40vw;
+	right: 145px;
 	width: 27px;
 	height: 27px;
 }
 #iconlocation:hover {
 	cursor: pointer		
+}
+#hamburger {
+	position: absolute;
+	top: 37px;
+	left: 130px;
+	width: 30px;
+	height: 30px;
+}
+#hamburger:hover {
+	cursor: pointer;
+}
+#settingspreview {
+	position: absolute;
+	display: none;
+	top: 30px;
+	left: 130px;
+	height: 150px;
+	width: 120px;
+	background-color: rgb(248, 248, 248);
+	border-radius: 3px;
+	padding: 10px;
+	font-family: 'Barlow', sans-serif;
+	animation: fadeIn ease 0.6s;
+	-webkit-animation: fadeIn ease 0.6s;
+	-moz-animation: fadeIn ease 0.6s;
+	-o-animation: fadeIn ease 0.6s;
+	-ms-animation: fadeIn ease 0.6s;
+	z-index: 10;
 }
 #clock {
     position: absolute;
