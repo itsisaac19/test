@@ -34,6 +34,9 @@ function hide() {
     if (localStorage.getItem("lon") === null) {
         localStorage.setItem("lon", -93)
     }    
+    if (localStorage.getItem("units") === null) {
+        localStorage.setItem("units", "us")
+    } 
     console.log(localStorage.getItem("units"))
 }
 hide();
@@ -179,6 +182,8 @@ document.getElementById("hamburger").addEventListener("click", function(){
         localStorage.setItem("lat", position.coords.latitude)
         localStorage.setItem("lon", position.coords.longitude) 
         
+        //console.log(localStorage.getItem("lat"))
+
         getCurrentWeather();
     }
 
@@ -303,18 +308,19 @@ function getCurrentWeather (){
 	}
 
 	var next4days = "2020-" + u + "-"+ c  
-    console.log(next4days)
+    //console.log(next4days)
     
 
     //Reference calls:
+    //Note: ONLY USE FOR DEBUGGING OTHERWISE THESE ARE UNNESSACARY CALLS THAT WILL ADD UP TO OUR LIMIT
 
-    fetch('https://api.climacell.co/v3/weather/realtime?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&unit_system='+localStorage.getItem("units")+'&fields=temp%2Csunrise%2Csunset&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
-	.then(response => response.json())
-	.then(data => (console.log(data)))
+    //fetch('https://api.climacell.co/v3/weather/realtime?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&unit_system='+localStorage.getItem("units")+'&fields=temp%2Csunrise%2Csunset&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	//.then(response => response.json())
+	//.then(data => (console.log(data)))
 
-    fetch('https://us1.locationiq.com/v1/reverse.php?key=01b9e5c630a3b1&lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&format=json')
-    .then(response => response.json())
-    .then(data => (console.log(data)))
+    //fetch('https://us1.locationiq.com/v1/reverse.php?key=01b9e5c630a3b1&lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&format=json')
+    //.then(response => response.json())
+    //.then(data => (console.log(data)))
     
     fetch('https://api.climacell.co/v3/weather/realtime?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&unit_system='+localStorage.getItem("units")+'&fields=temp%2Chumidity%2Cwind_speed%2Cbaro_pressure%2Cweather_code%2Csunrise%2Csunset&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
 	.then(response => response.json())
@@ -350,28 +356,133 @@ function getCurrentWeather (){
 	.then(data => {
 
 		var currenttemp = Math.floor(data['temp']['value'])
-		var currenticonstart = (data['weather_code']["value"])
+        var currenticonstart = (data['weather_code']["value"])
         var currenthumidity = Math.floor(data["humidity"]["value"])
         var currentwindspeed = Math.floor(data["wind_speed"]["value"])
         var currentairp =  data["baro_pressure"]["value"]
         var currentairpFinal = currentairp.toFixed(2)
 
 
-        //FIGURE THIS OUT !!
+        //Finish customizing 'currenticonstart' for each variable weather code!!:
 
-        //if (currenticonstart = "clear") {
-            //currenticonend = "color/clear_day.svg"
-        //}
+        switch (currenticonstart) {
+            default:
+                currenticonend = "color/clear_day.svg"
+                break;
 
-        //currenticonend = "color/" + currenticonstart + "_day.svg"
-        currenticonend = "color/clear_day.svg"
+            case "clear": 
+            //day/night
+                currenticonend = "color/clear_day.svg"
+                break;
 
+            case "cloudy":   
+                currenticonend = "color/cloudy.svg" 
+                break;
 
+            case "drizzle":   
+                currenticonend = "color/drizzle.svg" 
+                break;
 
+            case "flurries":   
+                currenticonend = "color/flurries.svg" 
+                break;
 
-		console.log(currenticonstart)
+            case "fog":   
+                currenticonend = "color/fog.svg" 
+                break;
+
+            case "fog_light":  
+                currenticonstart = "Light Fog"            
+                currenticonend = "color/fog_light.svg" 
+                break;
+
+            case "freezing_drizzle":  
+                currenticonstart = "Freezing Drizzle"    
+                currenticonend = "color/freezing_drizzle.svg" 
+                break;
+
+            case "freezing_rain_light":  
+                currenticonstart = "UNDER CONSTRUCTION"    
+                currenticonend = "color/freezing_rain_light.svg" 
+                break;    
+
+            case "freezing_rain":   
+            currenticonstart = "UNDER CONSTRUCTION"  
+                currenticonend = "color/freezing_rain.svg" 
+                break;    
+                
+            case "freezing_rain_heavy": 
+            currenticonstart = "UNDER CONSTRUCTION"    
+                currenticonend = "color/freezing_rain_heavy.svg" 
+                break;  
+                
+            case "ice_pellets_light": 
+            currenticonstart = "UNDER CONSTRUCTION"    
+                currenticonend = "color/ice_pellets_light.svg" 
+                break;
+
+            case "ice_pellets":   
+            currenticonstart = "UNDER CONSTRUCTION"  
+                currenticonend = "color/ice_pellets.svg" 
+                break;
+
+            case "ice_pellets_heavy":   
+            currenticonstart = "UNDER CONSTRUCTION"  
+                currenticonend = "color/ice_pellets_heavy.svg" 
+                break;
+
+            case "mostly_clear":
+                currenticonstart = "Mostly Clear"  
+                //day/night
+                currenticonend = "color/mostly_clear_day.svg"
+                break;
+
+            case "mostly_cloudy":
+                currenticonstart = "Mostly Cloudy"
+                currenticonend =  "color/mostly_cloudy_day.svg"
+                break;    
+
+            case "partly_cloudy":
+                currenticonstart = "Partly Cloudy"
+                //day/night
+                currenticonend =  "color/partly_cloudy_day.svg"
+                break; 
         
-		document.getElementById("icon").src = currenticonend;
+            case "rain_light":
+                currenticonend =  "color/rain_light.svg"
+                break;
+
+            case "rain":
+                currenticonend =  "color/rain.svg"
+                break; 
+
+            case "rain_heavy":
+                currenticonend =  "color/rain_heavy.svg"
+                break;  
+                
+            case "snow_light":
+                currenticonend =  "color/snow_light.svg"
+                break;  
+
+            case "snow":
+                currenticonend =  "color/snow.svg"
+                break;  
+                
+            case "snow_heavy":
+                currenticonend =  "color/snow_heavy.svg"
+                break;   
+
+            case "tstorm":
+                currenticonend =  "color/tstorm.svg"
+                break;   
+            }   
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+        
+        document.getElementById("icon").src = currenticonend;
+        document.getElementById("desc").innerHTML = (capitalizeFirstLetter(currenticonstart));
 		document.getElementById("tempnow").innerHTML = currenttemp + "° " + data["temp"]["units"];
         document.getElementById("stat1").innerHTML = currenthumidity + " " + data["humidity"]["units"];
         document.getElementById("stat3").innerHTML = currentwindspeed + " " + data["wind_speed"]["units"];
