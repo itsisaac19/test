@@ -42,7 +42,7 @@
 	  opacity:1;
   }
   }
-#Misty {
+#BackImage {
 	position: absolute;
 	top: 0;
 	left: 0px;
@@ -89,13 +89,13 @@
 	width: 200px;
 	top: 120px;
 	left: 10px;
-	font-size: 30px;
+	font-size: 2.15vw;
 }
 #tempnow {
 	position: absolute;
 	top: 220px;
 	left: 10px;
-	font-size: 50px;
+	font-size: 3.6vw;
 	font-weight: 700;
 		
 }
@@ -111,7 +111,7 @@
 	color: white;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 200;
-	font-size: 20px;
+	font-size: 1.4vw;
 }
 #close {
 	width: 15px;
@@ -291,6 +291,36 @@ input:checked + .slider1:after
 	color: rgb(199, 231, 247);
 	cursor: pointer;
 }
+#tileImg {
+	position: relative;
+	left: 50%;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	background-color: none;
+	background-size: cover;
+	background-image: url(..//grassmisty.jpg);
+}
+#tileImg:hover{
+	cursor: pointer;
+}
+#tileLayout {
+	position: relative;
+	left: 50%;
+	margin-left: -40px;
+	width: 80px;
+	height: 40px;
+	border-style: solid;
+	border: black;
+	outline-color: rgb(122, 122, 122);
+	outline-style: solid;
+	background-color: none;
+	background-size: cover;
+	background-image: url(..//Images/DefaultLayout.png);
+}
+#tileLayout:hover{
+	cursor: pointer;
+}
 #Feedback {
 	transition: ease-in 0.13s;
 }
@@ -334,7 +364,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 20px;
+	font-size: 1.4vw;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
 }
@@ -342,7 +372,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 30px;
+	font-size: 2.15vw;
 	font-weight: 700;
 }
 #Widget2 {
@@ -357,7 +387,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 20px;
+	font-size: 1.4vw;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
 }
@@ -365,7 +395,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 30px;
+	font-size: 2.15vw;
 	font-weight: 700;
 }
 #Widget3 {
@@ -380,7 +410,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 20px;
+	font-size: 1.4vw;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
 }
@@ -388,7 +418,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 30px;
+	font-size: 2.15vw;
 	font-weight: 700;
 }
 #Widget4 {
@@ -403,7 +433,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 20px;
+	font-size: 1.4vw;
 	font-family: 'Barlow', sans-serif;
 	font-weight: 300;
 }
@@ -411,7 +441,7 @@ input:checked + .slider1:after
 	position: absolute;
 	top: 20px;
 	left: 3.9vw;
-	font-size: 30px;
+	font-size: 2.15vw;
 	font-weight: 700;
 }
 #containertop {
@@ -481,4 +511,19 @@ input:checked + .slider1:after
     font-size: 30px;
     font-family: 'Barlow', sans-serif;
 	letter-spacing: 7px;
+}
+#climacell {
+	position: absolute;
+	bottom: 40px;
+	left: 50px;
+	font-family: 'Barlow', sans-serif;
+	font-size: 14px;
+	color: rgb(212, 212, 212);
+}
+#climacell:hover {
+	cursor: pointer;
+}
+#climacell::after {
+	content: ' ClimaCell';
+	color: rgb(151, 193, 212);
 }

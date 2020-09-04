@@ -18,7 +18,7 @@
 	
 <body>
 	
-	<img id="Misty"/>
+	<img id="BackImage"/>
 	
 	<!--<iframe id="radarmain" src="https://www.rainviewer.com/map.html?loc=47.8459,-91.5656,7&oFa=1&oC=1&oU=0&oCS=0&oF=0&oAP=0&rmt=4&c=1&o=71&lm=0&th=0&sm=1&sn=1" width="100%" frameborder="0" style="border:0;height:50vh;display: none;" allowfullscreen></iframe>-->
 
@@ -55,41 +55,57 @@
 
 	<div id="containertop">
 		<div id="containertopHOLDER">
-		<img id="iconlocation" src="location.png" />
-		<img id="hamburger" src="hamboy2.png" />
+			<img id="iconlocation" src="location.png" />
+			<img id="hamburger" src="hamboy2.png" />
 
-		<div id="settingspreview">
-			<img id="close" src="closee.png"/>
+			<div id="settingspreview">
+				<img id="close" src="closee.png"/>
 
-			<p id="Preferences">Preferences</p>	
-			<p id="darkTheme">Dark Theme</p>
-	
-			<label id="switch11" onclick="themeToggle()" class="switch">
-				<input id="check19" type="checkbox">
-				<span class="slider round"></span>
-			</label>
-			<div id="innertest1"></div>
-	
-			<p id="Units">Units</p>
 
-			<label id="switch22" onclick="unitToggle()" class="switch">
-				<input id="check29" type="checkbox">
-				<span class="slider1 round"></span>
-				<p id="US">US</p>
-			</label>
-			<div id="innertest2" style="display: none;"></div>
-	
-			<p id="Customize">Customize</p>
-			<p id="Feedback">Feedback</p>
-	
-			
+				<!--Preferences-->
+				<p id="Preferences">Preferences</p>	
+				<p id="darkTheme">Dark Theme</p>
+		
+				<label id="switch11" onclick="themeToggle()" class="switch">
+					<input id="check19" type="checkbox">
+					<span class="slider round"></span>
+				</label>
+				<div id="innertest1"></div>
+		
+				<p id="Units">Units</p>
+
+				<label id="switch22" onclick="unitToggle()" class="switch">
+					<input id="check29" type="checkbox">
+					<span class="slider1 round"></span>
+					<p id="US">US</p>
+				</label>
+				<div id="innertest2" style="display: none;"></div>
+				<!--Preferences-->
+
+
+				<!--Customize-->
+				<p id="Customize">Customize</p>
+
+				<p id="backgroundImage" onclick="backgroundImageChange()">Background Image</p>
+				<div id="tileImg" onclick="backgroundImageChange()"></div>
+
+				<p id="Layout" onclick="layoutChange()">Layout</p>
+				<div id="tileLayout" onclick="layoutChange()"></div>
+				<!--Customize-->			
+				
+
+				<!--Feedback-->
+				<p id="Feedback">Feedback</p>
+				<!--FeedBack-->
+				
+			</div>
+
+			<div id="clock"></div>
+
 		</div>
-
-		<div id="clock"></div>
-
-	</div>
 	</div>
 
+	<div id="climacell">Powered by</div>
 
 </body>
 <script src="Fresh/Home.js"></script>

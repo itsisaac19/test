@@ -42,13 +42,17 @@ function hide() {
 hide();
 
 
-//Settings:
+//Settings:     ///////////////
 document.getElementById("hamburger").addEventListener("click", function(){
 
+    //Show and Hide the nessasary items
     document.getElementById("settingspreview").style.display = "block"
     document.getElementById("Preferences").style.display = "block"
     document.getElementById("Customize").style.display = "block"
     document.getElementById("Feedback").style.display = "block"
+
+    document.getElementById("backgroundImage").style.display = "none"
+    document.getElementById("Layout").style.display = "none"
     document.getElementById("darkTheme").style.display = "none"
     document.getElementById("Units").style.display = "none"
     document.getElementById("switch11").style.display = "none"
@@ -82,7 +86,7 @@ document.getElementById("hamburger").addEventListener("click", function(){
 
 
   }); 
-// Themes:
+// Preferences>Themes:
 
 
     function themeToggle(){
@@ -138,7 +142,7 @@ document.getElementById("hamburger").addEventListener("click", function(){
     }
 
 
-//Units:
+//Preferences>Units:
 
 
     function unitToggle() {
@@ -164,7 +168,42 @@ document.getElementById("hamburger").addEventListener("click", function(){
 
 
     }
+//Customize
 
+    document.getElementById("Customize").addEventListener("click", function(){
+
+    document.getElementById("Preferences").style.display = "none"
+    document.getElementById("Customize").style.display = "none"
+    document.getElementById("Feedback").style.display = "none"
+
+    document.getElementById("backgroundImage").style.display = "block"
+    document.getElementById("Layout").style.display = "block"
+
+    document.getElementById("settingspreview").style.height = "240px"
+
+    });
+
+    //Customize>BackgroundImage
+
+    function backgroundImageChange() {
+
+        var elo = 6
+
+        if (elo == 5) [
+            elo = 3
+        ]
+
+    }
+    //Customize>Layout
+
+    function layoutChange() {
+
+        var elo = 6
+
+        if (elo == 5) [
+            elo = 3
+        ]
+    }
 
     document.getElementById("iconlocation").addEventListener("click", function(){
 
@@ -322,9 +361,9 @@ function getCurrentWeather (){
     //.then(response => response.json())
     //.then(data => (console.log(data)))
     
-    fetch('https://api.climacell.co/v3/weather/realtime?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&unit_system='+localStorage.getItem("units")+'&fields=temp%2Chumidity%2Cwind_speed%2Cbaro_pressure%2Cweather_code%2Csunrise%2Csunset&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
-	.then(response => response.json())
-	.then(data => (console.log(data)))
+    //fetch('https://api.climacell.co/v3/weather/realtime?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&unit_system='+localStorage.getItem("units")+'&fields=temp%2Chumidity%2Cwind_speed%2Cbaro_pressure%2Cweather_code%2Csunrise%2Csunset&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+	//.then(response => response.json())
+	//.then(data => (console.log(data)))
 
 
 
@@ -343,7 +382,7 @@ function getCurrentWeather (){
 
 
     //HOURLY
-    fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&location_id=shoreview&unit_system='+localStorage.getItem("units")+'&start_time=now&end_time='+next4days+'T14%3A09%3A50Z&fields=precipitation_probability&apikey=oATA14jpsO1MdhKOjKCscL6Aym7N6QAn')
+    fetch('https://api.climacell.co/v3/weather/forecast/hourly?lat='+localStorage.getItem("lat")+'&lon='+localStorage.getItem("lon")+'&location_id=shoreview&unit_system='+localStorage.getItem("units")+'&start_time=now&end_time='+next4days+'T14%3A09%3A50Z&fields=precipitation_probability&apikey=gjkSy3KHmWy7xWUrToVJA24shlhC5w5z')
 	.then(response => response.json())
 	.then(data => {
         var currentrainchance = data[0]["precipitation_probability"]["value"]
